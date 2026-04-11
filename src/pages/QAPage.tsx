@@ -104,14 +104,14 @@ export default function QAPage() {
     <DashboardLayout>
       <div className="space-y-8">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-black text-slate-900">Hỏi đáp</h1>
-            <p className="text-slate-500 mt-1">Đặt câu hỏi và nhận câu trả lời từ cộng đồng</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Hỏi đáp</h1>
+            <p className="text-slate-500 mt-1 text-sm sm:text-base">Đặt câu hỏi và nhận câu trả lời từ cộng đồng</p>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <span className="material-symbols-outlined">add</span>
             Đặt câu hỏi
@@ -158,20 +158,20 @@ export default function QAPage() {
         </div>
 
         {/* Filters */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 overflow-x-auto pb-2">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 w-full lg:w-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-5 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+                className={`px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
                   activeCategory === category.id
                     ? 'bg-orange-600 text-white shadow-lg'
                     : 'bg-white text-slate-600 border border-slate-200 hover:border-orange-300'
                 }`}
               >
-                <span className="material-symbols-outlined text-lg">{category.icon}</span>
-                {category.name}
+                <span className="material-symbols-outlined text-base sm:text-lg">{category.icon}</span>
+                <span className="hidden sm:inline">{category.name}</span>
               </button>
             ))}
           </div>
@@ -179,7 +179,7 @@ export default function QAPage() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full lg:w-auto px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
           >
             <option value="recent">Mới nhất</option>
             <option value="popular">Phổ biến</option>

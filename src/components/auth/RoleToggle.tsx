@@ -11,7 +11,7 @@ export default function RoleToggle({ activeRole, onRoleChange }: RoleToggleProps
         onClick={() => onRoleChange('student')}
         className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all cursor-pointer ${
           activeRole === 'student'
-            ? 'bg-white shadow-sm text-primary'
+            ? 'bg-white shadow-sm text-orange-600'
             : 'text-on-surface-variant hover:text-on-surface'
         }`}
       >
@@ -22,7 +22,7 @@ export default function RoleToggle({ activeRole, onRoleChange }: RoleToggleProps
         onClick={() => onRoleChange('lecturer')}
         className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all cursor-pointer ${
           activeRole === 'lecturer'
-            ? 'bg-white shadow-sm text-primary'
+            ? 'bg-white shadow-sm text-orange-600'
             : 'text-on-surface-variant hover:text-on-surface'
         }`}
       >

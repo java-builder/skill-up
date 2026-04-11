@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import BrandHeader from './BrandHeader';
 import RoleToggle from './RoleToggle';
 import InputField from './InputField';
 import SocialButtons from './SocialButtons';
@@ -19,10 +18,10 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
 
   return (
     <>
-      <BrandHeader
-        title="Chào mừng trở lại"
-        subtitle="Truy cập bảng điều khiển và hồ sơ học tập của bạn."
-      />
+      <div className="mb-10 text-center lg:text-left">
+        <h3 className="text-2xl font-bold text-on-surface mb-2">Chào mừng trở lại</h3>
+        <p className="text-on-surface-variant">Truy cập bảng điều khiển và hồ sơ học tập của bạn.</p>
+      </div>
 
       <RoleToggle
         activeRole={role}
@@ -43,7 +42,7 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
             <label className="text-sm font-bold text-on-surface-variant" htmlFor="password">
               Mật khẩu
             </label>
-            <a className="text-xs font-bold text-primary hover:underline" href="#">
+            <a className="text-xs font-bold text-orange-600 hover:underline" href="#">
               Quên mật khẩu?
             </a>
           </div>
@@ -57,19 +56,8 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
           />
         </div>
 
-        <div className="flex items-center gap-2 px-1">
-          <input
-            className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20"
-            id="remember"
-            type="checkbox"
-          />
-          <label className="text-sm font-medium text-on-surface-variant" htmlFor="remember">
-            Duy trì đăng nhập trong 30 ngày
-          </label>
-        </div>
-
         <button
-          className="w-full bg-primary text-on-primary py-4 rounded-2xl font-black text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+          className="w-full bg-orange-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           type="submit"
         >
           Đăng nhập
@@ -91,7 +79,7 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         Mới tham gia Academic Pulse?{' '}
         <button
           onClick={onSwitchToRegister}
-          className="text-primary font-bold hover:underline cursor-pointer"
+          className="text-orange-600 font-bold hover:underline cursor-pointer"
         >
           Tạo tài khoản
         </button>

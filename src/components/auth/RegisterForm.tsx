@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import BrandHeader from './BrandHeader';
 import RoleToggle from './RoleToggle';
 import InputField from './InputField';
 import SocialButtons from './SocialButtons';
@@ -11,7 +10,6 @@ interface RegisterFormProps {
 export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
   const [role, setRole] = useState<'student' | 'lecturer'>('student');
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,10 +18,10 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
 
   return (
     <>
-      <BrandHeader
-        title="Tạo tài khoản"
-        subtitle="Bắt đầu hành trình học tập của bạn tại FPT University."
-      />
+      <div className="mb-10 text-center lg:text-left">
+        <h3 className="text-2xl font-bold text-on-surface mb-2">Tạo tài khoản</h3>
+        <p className="text-on-surface-variant">Bắt đầu hành trình học tập của bạn tại FPT University.</p>
+      </div>
 
       <RoleToggle
         activeRole={role}
@@ -67,37 +65,8 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
           onRightIconClick={() => setShowPassword(!showPassword)}
         />
 
-        <InputField
-          id="confirm-password"
-          label="Xác nhận mật khẩu"
-          type={showConfirmPassword ? 'text' : 'password'}
-          placeholder="••••••••"
-          icon="lock"
-          rightIcon={showConfirmPassword ? 'visibility_off' : 'visibility'}
-          onRightIconClick={() => setShowConfirmPassword(!showConfirmPassword)}
-        />
-
-        <div className="flex items-center gap-2 px-1">
-          <input
-            className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20"
-            id="terms"
-            type="checkbox"
-            required
-          />
-          <label className="text-sm font-medium text-on-surface-variant" htmlFor="terms">
-            Tôi đồng ý với{' '}
-            <a href="#" className="text-primary hover:underline">
-              Điều khoản dịch vụ
-            </a>{' '}
-            và{' '}
-            <a href="#" className="text-primary hover:underline">
-              Chính sách bảo mật
-            </a>
-          </label>
-        </div>
-
         <button
-          className="w-full bg-primary text-on-primary py-4 rounded-2xl font-black text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+          className="w-full bg-orange-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           type="submit"
         >
           Đăng ký
@@ -119,7 +88,7 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
         Đã có tài khoản?{' '}
         <button
           onClick={onSwitchToLogin}
-          className="text-primary font-bold hover:underline cursor-pointer"
+          className="text-orange-600 font-bold hover:underline cursor-pointer"
         >
           Đăng nhập ngay
         </button>

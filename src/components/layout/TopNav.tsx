@@ -1,28 +1,41 @@
-export default function TopNav() {
-  return (
-    <header className="w-full h-16 sticky top-0 z-40 flex justify-between items-center px-8 bg-white/80 backdrop-blur-md ml-64 max-w-[calc(100%-16rem)]">
-      <div className="flex items-center gap-6">
-        <div className="relative w-64">
-          <span className="absolute inset-y-0 left-3 flex items-center text-slate-400">
-            <span className="material-symbols-outlined text-sm">search</span>
-          </span>
-          <input
-            className="w-full pl-10 pr-4 py-2 bg-slate-50 border-none rounded-full text-sm focus:ring-2 focus:ring-orange-600/20"
-            placeholder="Tìm kiếm..."
-            type="text"
-          />
-        </div>
-      </div>
+import { useSidebarContext } from './DashboardLayout';
 
-      <div className="flex items-center gap-6">
+export default function TopNav() {
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useSidebarContext();
+
+  return (
+    <header className="sticky top-0 h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100 lg:ml-64 lg:w-[calc(100%-16rem)] w-full z-30">
+      {/* Mobile Menu Button - only visible on mobile */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="lg:hidden p-2 hover:bg-slate-50 rounded-xl transition-all cursor-pointer"
+        aria-label="Toggle menu"
+      >
+        <div className="w-5 h-5 flex flex-col justify-center items-center gap-1">
+          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+            isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+          }`}></span>
+          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+            isMobileMenuOpen ? 'opacity-0' : ''
+          }`}></span>
+          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+            isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+          }`}></span>
+        </div>
+      </button>
+
+      {/* Spacer - pushes right content when hamburger is hidden on desktop */}
+      <div className="flex-1"></div>
+
+      <div className="flex items-center gap-3 lg:gap-6">
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-orange-600">notifications</span>
-          <div className="flex flex-col text-right">
+          <div className="hidden sm:flex flex-col text-right">
             <span className="text-orange-600 font-black text-sm">2,450 XP</span>
             <span className="text-slate-500 text-[10px] font-bold">Cấp 12</span>
           </div>
         </div>
-        <div className="h-10 w-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-600/20 cursor-pointer">
+        <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-600/20 cursor-pointer">
           <img
             alt="Avatar sinh viên"
             className="w-full h-full object-cover"

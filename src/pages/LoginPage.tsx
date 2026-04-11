@@ -10,10 +10,10 @@ export default function LoginPage() {
   const [authMode, setAuthMode] = useState<AuthMode>('login');
 
   return (
-    <main className="flex h-screen w-screen">
+    <main className="flex flex-col lg:flex-row min-h-screen w-full">
       <HeroSection />
       
-      <section className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 md:px-20 bg-surface">
+      <section className="w-full lg:w-1/2 flex flex-col justify-center items-center px-4 sm:px-6 md:px-12 lg:px-20 py-8 lg:py-0 bg-surface">
         <div className="w-full max-w-md">
           {authMode === 'login' ? (
             <LoginForm onSwitchToRegister={() => setAuthMode('register')} />

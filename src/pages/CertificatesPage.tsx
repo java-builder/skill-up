@@ -74,28 +74,28 @@ export default function CertificatesPage() {
   return (
     <DashboardLayout>
       <div className="space-y-12">
-        <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-primary-container p-12 text-on-primary">
+        <section className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-primary to-primary-container p-6 sm:p-12 text-on-primary">
           <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-              <span className="material-symbols-outlined text-sm">military_tech</span>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-4 sm:mb-6">
+              <span className="material-symbols-outlined text-xs sm:text-sm">military_tech</span>
               Thành tích học thuật
             </div>
-            <h1 className="text-5xl font-black mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-black mb-3 sm:mb-4 leading-tight">
               Làm chủ kỹ năng,
               <br />
               Nhận huy hiệu của bạn.
             </h1>
-            <p className="text-lg opacity-90 mb-8">
+            <p className="text-base sm:text-lg opacity-90 mb-6 sm:mb-8">
               Theo dõi tiến độ của bạn tại Đại học FPT. Mỗi cột mốc đưa bạn đến gần hơn với xác thực tiêu chuẩn ngành. Bạn có {earnedCount} chứng chỉ đang hoạt động và {lockedCount} đang chờ mở khóa.
             </p>
             <div className="flex gap-4">
-              <button className="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer">
+              <button className="bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer text-sm sm:text-base">
                 <span className="material-symbols-outlined">share</span>
-                Chia sẻ thành tích
+                <span className="hidden sm:inline">Chia sẻ thành tích</span>
               </button>
             </div>
           </div>
-          <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 pointer-events-none">
+          <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 pointer-events-none hidden lg:block">
             <span
               className="material-symbols-outlined text-[20rem] absolute -right-20 -top-20"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -106,17 +106,17 @@ export default function CertificatesPage() {
         </section>
 
         <section className="space-y-6">
-          <div className="flex justify-between items-end">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
             <div>
-              <h2 className="text-3xl font-black text-on-surface tracking-tight">Kỹ năng đã xác minh</h2>
-              <p className="text-on-surface-variant">
+              <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight">Kỹ năng đã xác minh</h2>
+              <p className="text-on-surface-variant text-sm sm:text-base">
                 Chứng chỉ số đã kiếm được và lộ trình học tập tương lai của bạn.
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-2 w-full sm:w-auto">
               <button
                 onClick={() => setFilter('all')}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors cursor-pointer ${
+                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'all'
                     ? 'bg-surface-container-high'
                     : 'text-on-surface-variant hover:bg-surface-container-high'
@@ -126,7 +126,7 @@ export default function CertificatesPage() {
               </button>
               <button
                 onClick={() => setFilter('earned')}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors cursor-pointer ${
+                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'earned'
                     ? 'bg-surface-container-high'
                     : 'text-on-surface-variant hover:bg-surface-container-high'
@@ -136,7 +136,7 @@ export default function CertificatesPage() {
               </button>
               <button
                 onClick={() => setFilter('design')}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors cursor-pointer ${
+                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'design'
                     ? 'bg-surface-container-high'
                     : 'text-on-surface-variant hover:bg-surface-container-high'
@@ -146,7 +146,7 @@ export default function CertificatesPage() {
               </button>
               <button
                 onClick={() => setFilter('development')}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors cursor-pointer ${
+                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'development'
                     ? 'bg-surface-container-high'
                     : 'text-on-surface-variant hover:bg-surface-container-high'
@@ -289,47 +289,47 @@ export default function CertificatesPage() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-secondary-fixed rounded-[3rem] p-12 overflow-hidden">
-          <div className="lg:col-span-7 space-y-6">
-            <h2 className="text-4xl font-black text-on-secondary-fixed leading-tight">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center bg-secondary-fixed rounded-2xl sm:rounded-[3rem] p-6 sm:p-12 overflow-hidden">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+            <h2 className="text-2xl sm:text-4xl font-black text-on-secondary-fixed leading-tight">
               Bảng điểm số của bạn được xác minh bởi FPT Blockchain.
             </h2>
-            <p className="text-on-secondary-fixed-variant text-lg max-w-xl">
+            <p className="text-on-secondary-fixed-variant text-base sm:text-lg max-w-xl">
               Mỗi chứng chỉ bạn kiếm được sẽ tự động được tạo thành chứng chỉ số có thể xác minh, đảm bảo tính toàn vẹn học thuật của bạn được công nhận toàn cầu bởi các đối tác doanh nghiệp.
             </p>
-            <div className="flex items-center gap-6 pt-4">
+            <div className="flex items-center gap-4 sm:gap-6 pt-4">
               <div className="flex -space-x-4">
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-12 h-12 rounded-full border-4 border-secondary-fixed bg-slate-200 overflow-hidden"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-secondary-fixed bg-slate-200 overflow-hidden"
                   >
                     <div className="w-full h-full bg-gradient-to-br from-orange-200 to-blue-200"></div>
                   </div>
                 ))}
-                <div className="w-12 h-12 rounded-full border-4 border-secondary-fixed bg-primary text-white flex items-center justify-center font-bold text-xs">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-secondary-fixed bg-primary text-white flex items-center justify-center font-bold text-xs">
                   +1.2k
                 </div>
               </div>
-              <span className="text-sm font-bold text-on-secondary-fixed-variant">
+              <span className="text-xs sm:text-sm font-bold text-on-secondary-fixed-variant">
                 Sinh viên được cấp chứng chỉ tháng này
               </span>
             </div>
           </div>
           <div className="lg:col-span-5 relative flex justify-center">
-            <div className="w-72 h-96 bg-white rounded-3xl shadow-2xl rotate-6 p-6 space-y-4">
-              <div className="w-full h-40 bg-orange-50 rounded-xl flex items-center justify-center">
+            <div className="w-64 sm:w-72 h-80 sm:h-96 bg-white rounded-3xl shadow-2xl rotate-6 p-4 sm:p-6 space-y-4">
+              <div className="w-full h-32 sm:h-40 bg-orange-50 rounded-xl flex items-center justify-center">
                 <span
-                  className="material-symbols-outlined text-primary text-6xl"
+                  className="material-symbols-outlined text-primary text-5xl sm:text-6xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
                 </span>
               </div>
               <div className="space-y-2">
-                <div className="h-4 w-3/4 bg-slate-100 rounded"></div>
-                <div className="h-4 w-1/2 bg-slate-100 rounded"></div>
-                <div className="h-20 w-full bg-slate-50 rounded-xl mt-4"></div>
+                <div className="h-3 sm:h-4 w-3/4 bg-slate-100 rounded"></div>
+                <div className="h-3 sm:h-4 w-1/2 bg-slate-100 rounded"></div>
+                <div className="h-16 sm:h-20 w-full bg-slate-50 rounded-xl mt-4"></div>
               </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-secondary-fixed via-transparent to-transparent"></div>

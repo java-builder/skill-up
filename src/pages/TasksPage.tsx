@@ -145,16 +145,16 @@ export default function TasksPage() {
     <DashboardLayout>
       <div className="space-y-8">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-black text-slate-900">Nhiệm vụ & Thử thách</h1>
-            <p className="text-slate-500 mt-1">Hoàn thành các nhiệm vụ để kiếm điểm và nâng cao kỹ năng</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Nhiệm vụ & Thử thách</h1>
+            <p className="text-slate-500 mt-1 text-sm sm:text-base">Hoàn thành các nhiệm vụ để kiếm điểm và nâng cao kỹ năng</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="flex-1 sm:flex-none px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="deadline">Sắp hết hạn</option>
               <option value="points">Điểm cao nhất</option>
