@@ -9,6 +9,7 @@ import AssignmentDetailPage from './pages/AssignmentDetailPage';
 import CertificatesPage from './pages/CertificatesPage';
 import ProfilePage from './pages/ProfilePage';
 import QAPage from './pages/QAPage';
+import QADetailPage from './pages/QADetailPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/tasks" element={<TasksPage />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/qa" element={<QAPage />} />
+        <Route path="/qa/:id" element={<QADetailPage />} />
         <Route path="/certificates" element={<CertificatesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />

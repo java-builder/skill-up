@@ -41,13 +41,13 @@ const courses = [
   },
   {
     id: 4,
-    title: 'Marketing số trong thời đại AI',
-    instructor: 'TS. Phạm Thị D',
+    title: 'Kỹ năng giao tiếp và thuyết trình',
+    instructor: 'ThS. Phạm Thị D',
     progress: 30,
     totalLessons: 16,
     completedLessons: 5,
     thumbnail: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWwl9s_NT0zOiKvzYg1OSOS19_qwNbjKw6FkAwva-fp5OppOIASf3FGALSOgUlyXglCSC9mG4j-ltoY0jEuTJsILWj8lZDznrrihf28vtGvOLFdlSPFDgxofNJQy6Mq6c7clwq8wRcOjNYFlDI7VSXiR0Xv2aOjQKEpgag6S9MB2KiWTpSLdbqYwdisXw6Ptobht2sd7JRADmhzfI_rPdjrKIfxLfKSQfbidrWenDJAf7SwWI6U1oOnyaHNJcOJ-av6yJugmtOloEk',
-    category: 'Kinh doanh',
+    category: 'Kỹ năng mềm',
     level: 'Cơ bản',
     color: 'emerald',
   },
@@ -65,13 +65,13 @@ const courses = [
   },
   {
     id: 6,
-    title: 'Quản lý dự án Agile',
+    title: 'Làm việc nhóm hiệu quả',
     instructor: 'ThS. Hoàng Văn E',
     progress: 15,
     totalLessons: 12,
     completedLessons: 2,
     thumbnail: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCP02HBhpykolzapq5rJfNyRPDLR07kqXYg13i3a9LPq_UKmUjjAlKCE05bRWKm5lUsda2jB-VTwBp-97ztJr1lp-9t9_L5PjVtCIfLiYcmGcMWwzt-T45hXUADoi4yOlKPm-dDuz0O3blp8_9ILGslFZCIRZ9nvX3Ip2Y9MVsvXTZSOdg0VLLdR1nSkL8Si1ZxdV1EMpo3rdSDMXZQcPduXvr8ziBP9fKiL0LZYG5EXQBgGQMAVq-h2IEWoufzRCsUS4ISBDZG-cKQ',
-    category: 'Quản lý',
+    category: 'Kỹ năng mềm',
     level: 'Cơ bản',
     color: 'indigo',
   },
@@ -93,17 +93,17 @@ export default function CoursesPage() {
       <div className="space-y-8">
         <div className="flex justify-between items-end">
           <div>
-            <h2 className="text-4xl font-black text-on-surface tracking-tight">Khóa học</h2>
-            <p className="text-on-surface-variant font-medium mt-1">
+            <h2 className="text-3xl font-black text-slate-900">Khóa học</h2>
+            <p className="text-slate-500 mt-1">
               Khám phá và đăng ký các khóa học tại FPT University
             </p>
           </div>
           <div className="flex gap-3">
-            <button className="px-6 py-3 bg-surface-container-low text-on-surface rounded-3xl font-bold flex items-center gap-2 hover:bg-surface-container transition-all cursor-pointer">
+            <button className="px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold flex items-center gap-2 hover:border-orange-300 transition-all cursor-pointer">
               <span className="material-symbols-outlined">bookmark</span>
               Đã lưu
             </button>
-            <button className="px-6 py-3 bg-primary text-on-primary rounded-3xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-orange-600/20 cursor-pointer">
+            <button className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-orange-700 transition-all shadow-lg cursor-pointer">
               <span className="material-symbols-outlined">school</span>
               Khóa của tôi
             </button>
@@ -116,10 +116,10 @@ export default function CoursesPage() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all cursor-pointer ${
+                className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-all cursor-pointer ${
                   activeFilter === filter.id
-                    ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
-                    : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'
+                    ? 'bg-orange-600 text-white shadow-lg'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-orange-300'
                 }`}
               >
                 {filter.label}
@@ -129,13 +129,13 @@ export default function CoursesPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <select className="bg-surface-container-low border-none rounded-full text-sm font-bold px-4 py-2 focus:ring-2 focus:ring-primary/20 cursor-pointer">
+            <select className="bg-white border border-slate-200 rounded-xl text-sm font-bold px-4 py-2 focus:ring-2 focus:ring-orange-500 cursor-pointer">
               <option>Tiến độ: Tất cả</option>
               <option>Đang học</option>
               <option>Hoàn thành</option>
               <option>Chưa bắt đầu</option>
             </select>
-            <button className="p-2.5 bg-surface-container-low rounded-full hover:bg-surface-container-high transition-colors cursor-pointer">
+            <button className="p-2.5 bg-white border border-slate-200 rounded-xl hover:border-orange-300 transition-colors cursor-pointer">
               <span className="material-symbols-outlined text-sm">tune</span>
             </button>
           </div>

@@ -1,5 +1,8 @@
 import DashboardLayout from '../components/layout/DashboardLayout';
 import { useState } from 'react';
+import CreateQuestionModal from '../components/qa/CreateQuestionModal';
+import QuestionCard from '../components/qa/QuestionCard';
+import { Toaster } from 'react-hot-toast';
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: 'forum' },
@@ -91,6 +94,7 @@ const questions = [
 export default function QAPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [sortBy, setSortBy] = useState('recent');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredQuestions = activeCategory === 'all' 
     ? questions 
@@ -105,7 +109,10 @@ export default function QAPage() {
             <h1 className="text-3xl font-black text-slate-900">Hỏi đáp</h1>
             <p className="text-slate-500 mt-1">Đặt câu hỏi và nhận câu trả lời từ cộng đồng</p>
           </div>
-          <button className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center gap-2 cursor-pointer">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center gap-2 cursor-pointer"
+          >
             <span className="material-symbols-outlined">add</span>
             Đặt câu hỏi
           </button>
@@ -184,91 +191,13 @@ export default function QAPage() {
         {/* Questions List */}
         <div className="space-y-4">
           {filteredQuestions.map((question) => (
-            <div
-              key={question.id}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:border-orange-300 hover:shadow-md transition-all cursor-pointer"
-            >
-              <div className="flex gap-6">
-                {/* Stats Column */}
-                <div className="flex flex-col items-center gap-3 min-w-[80px]">
-                  <div className="text-center">
-                    <div className="text-2xl font-black text-slate-900">{question.answers}</div>
-                    <div className="text-xs text-slate-500">câu trả lời</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-slate-600">{question.views}</div>
-                    <div className="text-xs text-slate-500">lượt xem</div>
-                  </div>
-                  {question.hasAcceptedAnswer && (
-                    <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">
-                      <span className="material-symbols-outlined text-green-600 text-lg">check_circle</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Content Column */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 hover:text-orange-600 transition-colors">
-                    {question.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm mb-4 line-clamp-2">{question.content}</p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {question.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold hover:bg-orange-50 hover:text-orange-600 transition-colors cursor-pointer"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={question.author.avatar}
-                        alt={question.author.name}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                      <div>
-                        <div className="text-sm font-bold text-slate-900">{question.author.name}</div>
-                        <div className="text-xs text-slate-500">{question.author.role} • {question.createdAt}</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <button
-                        className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-colors cursor-pointer ${
-                          question.isLiked
-                            ? 'bg-orange-50 text-orange-600'
-                            : 'bg-slate-50 text-slate-600 hover:bg-orange-50 hover:text-orange-600'
-                        }`}
-                      >
-                        <span className="material-symbols-outlined text-lg">thumb_up</span>
-                        <span className="text-sm font-bold">{question.likes}</span>
-                      </button>
-                      <button
-                        className={`p-2 rounded-lg transition-colors cursor-pointer ${
-                          question.isFavorited
-                            ? 'bg-orange-50 text-orange-600'
-                            : 'bg-slate-50 text-slate-600 hover:bg-orange-50 hover:text-orange-600'
-                        }`}
-                      >
-                        <span className="material-symbols-outlined text-lg">
-                          {question.isFavorited ? 'bookmark' : 'bookmark_border'}
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <QuestionCard key={question.id} {...question} />
           ))}
         </div>
       </div>
+
+      <CreateQuestionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Toaster position="top-right" />
     </DashboardLayout>
   );
 }

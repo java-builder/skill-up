@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function TopNav() {
   return (
     <header className="w-full h-16 sticky top-0 z-40 flex justify-between items-center px-8 bg-white/80 backdrop-blur-md ml-64 max-w-[calc(100%-16rem)]">

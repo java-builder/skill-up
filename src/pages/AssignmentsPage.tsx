@@ -66,14 +66,14 @@ const assignments = [
   },
 ];
 
-const statusConfig = {
+const statusConfig: Record<string, { label: string; color: string; icon: string }> = {
   pending: { label: 'Chưa làm', color: 'bg-slate-100 text-slate-600', icon: 'schedule' },
   'in-progress': { label: 'Đang làm', color: 'bg-blue-100 text-blue-600', icon: 'pending' },
   overdue: { label: 'Quá hạn', color: 'bg-red-100 text-red-600', icon: 'error' },
   completed: { label: 'Hoàn thành', color: 'bg-green-100 text-green-600', icon: 'check_circle' },
 };
 
-const priorityConfig = {
+const priorityConfig: Record<string, { label: string; color: string }> = {
   high: { label: 'Cao', color: 'text-red-600' },
   medium: { label: 'Trung bình', color: 'text-orange-600' },
   low: { label: 'Thấp', color: 'text-slate-600' },
