@@ -1,6 +1,6 @@
 export default function ActiveTaskHero() {
   return (
-    <section className="relative overflow-hidden rounded-2xl p-10 bg-gradient-to-br from-primary to-primary-container text-white">
+    <section className="relative overflow-hidden rounded-2xl p-10 bg-gradient-to-br from-orange-400 to-orange-500 dark:from-orange-500 dark:to-orange-500 text-white transition-colors">
       <div className="relative z-10 max-w-xl">
         <div className="flex items-center gap-2 mb-4">
           <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">

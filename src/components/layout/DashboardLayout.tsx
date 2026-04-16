@@ -28,7 +28,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <SidebarContext.Provider value={{ isMobileMenuOpen, setIsMobileMenuOpen }}>
-      <div className="min-h-screen bg-surface">
+      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
         <Sidebar />
         <TopNav />
         <main className="lg:ml-64 p-4 sm:p-6 lg:p-8 min-h-screen">

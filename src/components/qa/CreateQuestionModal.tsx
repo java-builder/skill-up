@@ -104,7 +104,7 @@ export default function CreateQuestionModal({ isOpen, onClose }: CreateQuestionM
             </button>
             <button
               type="submit"
-              className="px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors cursor-pointer"
+              className="px-6 py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors cursor-pointer"
             >
               Đăng câu hỏi
             </button>

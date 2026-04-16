@@ -111,7 +111,7 @@ export default function QAPage() {
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full sm:w-auto px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-6 py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <span className="material-symbols-outlined">add</span>
             Đặt câu hỏi
@@ -120,34 +120,34 @@ export default function QAPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center gap-3 mb-2">
-              <span className="material-symbols-outlined text-orange-600 text-2xl">forum</span>
-              <span className="text-xs font-bold text-slate-500">Tổng số</span>
+              <span className="material-symbols-outlined text-orange-500 dark:text-orange-400 text-2xl">forum</span>
+              <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Tổng số</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">248</h3>
-            <p className="text-slate-500 text-sm mt-1">Câu hỏi</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">248</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">Câu hỏi</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center gap-3 mb-2">
-              <span className="material-symbols-outlined text-green-600 text-2xl">check_circle</span>
-              <span className="text-xs font-bold text-slate-500">Đã giải quyết</span>
+              <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-2xl">check_circle</span>
+              <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Đã giải quyết</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">186</h3>
-            <p className="text-slate-500 text-sm mt-1">Câu trả lời được chấp nhận</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">186</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">Câu trả lời được chấp nhận</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center gap-3 mb-2">
-              <span className="material-symbols-outlined text-blue-600 text-2xl">people</span>
-              <span className="text-xs font-bold text-slate-500">Thành viên</span>
+              <span className="material-symbols-outlined text-blue-600 dark:text-blue-400 text-2xl">people</span>
+              <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Thành viên</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">1,245</h3>
-            <p className="text-slate-500 text-sm mt-1">Người tham gia</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">1,245</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">Người tham gia</p>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-2xl shadow-sm text-white">
+          <div className="bg-gradient-to-br from-orange-500 to-orange-500 p-6 rounded-2xl shadow-sm text-white">
             <div className="flex items-center gap-3 mb-2">
               <span className="material-symbols-outlined text-2xl">star</span>
               <span className="text-xs font-bold">Câu hỏi của bạn</span>
@@ -166,8 +166,8 @@ export default function QAPage() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
                   activeCategory === category.id
-                    ? 'bg-orange-600 text-white shadow-lg'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-orange-300'
+                    ? 'bg-orange-500 text-white shadow-lg'
+                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-orange-300'
                 }`}
               >
                 <span className="material-symbols-outlined text-base sm:text-lg">{category.icon}</span>

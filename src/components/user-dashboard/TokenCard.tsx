@@ -16,7 +16,7 @@ export default function TokenCard() {
       <div className="space-y-3">
         <div className="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
           <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
-            <span className="material-symbols-outlined text-orange-600 text-sm">shopping_bag</span>
+            <span className="material-symbols-outlined text-orange-500 text-sm">shopping_bag</span>
           </div>
           <span className="text-xs font-semibold">Đổi quà tặng</span>
         </div>

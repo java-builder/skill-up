@@ -23,11 +23,11 @@ const tasks = [
     timeEstimate: '90 phút',
     deadline: '3 ngày nữa',
     status: 'Chưa bắt đầu',
-    statusColor: 'text-slate-500',
+    statusColor: 'text-slate-500 dark:text-slate-400',
     participants: 0,
     icon: 'code',
     iconBg: 'bg-orange-50',
-    iconColor: 'text-orange-600',
+    iconColor: 'text-orange-500',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const tasks = [
     description: '30 câu hỏi về lập trình hướng đối tượng, kế thừa, đa hình',
     course: 'Lập trình Java',
     difficulty: 'Trung bình',
-    difficultyColor: 'text-orange-600',
+    difficultyColor: 'text-orange-500',
     difficultyBg: 'bg-orange-50',
     points: 150,
     timeEstimate: '45 phút',
@@ -58,13 +58,13 @@ const tasks = [
     description: 'Tạo API CRUD hoàn chỉnh với authentication và validation',
     course: 'Lập trình Web',
     difficulty: 'Trung bình',
-    difficultyColor: 'text-orange-600',
+    difficultyColor: 'text-orange-500',
     difficultyBg: 'bg-orange-50',
     points: 120,
     timeEstimate: '120 phút',
     deadline: '1 tuần nữa',
     status: 'Chưa bắt đầu',
-    statusColor: 'text-slate-500',
+    statusColor: 'text-slate-500 dark:text-slate-400',
     participants: 0,
     icon: 'api',
     iconBg: 'bg-green-50',
@@ -84,7 +84,7 @@ const tasks = [
     timeEstimate: '100 phút',
     deadline: '4 ngày nữa',
     status: 'Chưa bắt đầu',
-    statusColor: 'text-slate-500',
+    statusColor: 'text-slate-500 dark:text-slate-400',
     participants: 0,
     icon: 'route',
     iconBg: 'bg-purple-50',
@@ -119,13 +119,13 @@ const tasks = [
     description: 'Thiết kế giao diện responsive cho trang web thương mại điện tử',
     course: 'Thiết kế giao diện',
     difficulty: 'Trung bình',
-    difficultyColor: 'text-orange-600',
+    difficultyColor: 'text-orange-500',
     difficultyBg: 'bg-orange-50',
     points: 90,
     timeEstimate: '60 phút',
     deadline: '6 ngày nữa',
     status: 'Chưa bắt đầu',
-    statusColor: 'text-slate-500',
+    statusColor: 'text-slate-500 dark:text-slate-400',
     participants: 0,
     icon: 'devices',
     iconBg: 'bg-pink-50',
@@ -147,14 +147,14 @@ export default function TasksPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Nhiệm vụ & Thử thách</h1>
-            <p className="text-slate-500 mt-1 text-sm sm:text-base">Hoàn thành các nhiệm vụ để kiếm điểm và nâng cao kỹ năng</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100">Nhiệm vụ & Thử thách</h1>
+            <p className="text-slate-500 dark:text-slate-400 mt-1 text-sm sm:text-base">Hoàn thành các nhiệm vụ để kiếm điểm và nâng cao kỹ năng</p>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="flex-1 sm:flex-none px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="flex-1 sm:flex-none px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="deadline">Sắp hết hạn</option>
               <option value="points">Điểm cao nhất</option>
@@ -165,34 +165,34 @@ export default function TasksPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
-              <span className="material-symbols-outlined text-orange-600 text-2xl">task_alt</span>
-              <span className="text-xs font-bold text-slate-500">Tổng số</span>
+              <span className="material-symbols-outlined text-orange-500 text-2xl">task_alt</span>
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Tổng số</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">12</h3>
-            <p className="text-slate-500 text-sm mt-1">Nhiệm vụ khả dụng</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">12</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Nhiệm vụ khả dụng</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
               <span className="material-symbols-outlined text-blue-600 text-2xl">pending_actions</span>
-              <span className="text-xs font-bold text-slate-500">Đang làm</span>
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Đang làm</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">3</h3>
-            <p className="text-slate-500 text-sm mt-1">Nhiệm vụ chưa hoàn thành</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">3</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Nhiệm vụ chưa hoàn thành</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
               <span className="material-symbols-outlined text-green-600 text-2xl">check_circle</span>
-              <span className="text-xs font-bold text-slate-500">Hoàn thành</span>
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Hoàn thành</span>
             </div>
-            <h3 className="text-3xl font-black text-slate-900">8</h3>
-            <p className="text-slate-500 text-sm mt-1">Nhiệm vụ đã xong</p>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-slate-100">8</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Nhiệm vụ đã xong</p>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-2xl shadow-sm text-white">
+          <div className="bg-gradient-to-br from-orange-500 to-orange-500 p-6 rounded-2xl shadow-sm text-white">
             <div className="flex items-center justify-between mb-2">
               <span className="material-symbols-outlined text-2xl">stars</span>
               <span className="text-xs font-bold">Tổng điểm</span>
@@ -210,13 +210,13 @@ export default function TasksPage() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all cursor-pointer ${
                 activeCategory === category.id
-                  ? 'bg-orange-600 text-white shadow-lg'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:border-orange-300'
+                  ? 'bg-orange-500 text-white shadow-lg'
+                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 hover:border-orange-300'
               }`}
             >
               {category.name}
               <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
-                activeCategory === category.id ? 'bg-white/20' : 'bg-slate-100'
+                activeCategory === category.id ? 'bg-white dark:bg-slate-800/20' : 'bg-slate-100'
               }`}>
                 {category.count}
               </span>
@@ -229,7 +229,7 @@ export default function TasksPage() {
           {filteredTasks.map((task) => (
             <div
               key={task.id}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:border-orange-300 hover:shadow-lg transition-all cursor-pointer group"
+              className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 hover:border-orange-300 hover:shadow-lg transition-all cursor-pointer group"
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
@@ -242,18 +242,18 @@ export default function TasksPage() {
                   <span className={`px-3 py-1 rounded-lg text-xs font-bold ${task.difficultyBg} ${task.difficultyColor}`}>
                     {task.difficulty}
                   </span>
-                  <span className="text-orange-600 font-black text-sm">+{task.points} điểm</span>
+                  <span className="text-orange-500 font-black text-sm">+{task.points} điểm</span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="mb-4">
-                <span className="text-xs font-bold text-slate-500 uppercase">{task.type}</span>
-                <h3 className="text-lg font-bold text-slate-900 mt-1 mb-2 group-hover:text-orange-600 transition-colors">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">{task.type}</span>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mt-1 mb-2 group-hover:text-orange-500 transition-colors">
                   {task.title}
                 </h3>
-                <p className="text-sm text-slate-600 line-clamp-2 mb-3">{task.description}</p>
-                <span className="text-xs text-slate-500 flex items-center gap-1">
+                <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-3">{task.description}</p>
+                <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm">school</span>
                   {task.course}
                 </span>
@@ -263,8 +263,8 @@ export default function TasksPage() {
               {task.progress !== undefined && (
                 <div className="mb-4">
                   <div className="flex justify-between text-xs mb-1">
-                    <span className="text-slate-500">Tiến độ</span>
-                    <span className="font-bold text-slate-900">{task.progress}%</span>
+                    <span className="text-slate-500 dark:text-slate-400">Tiến độ</span>
+                    <span className="font-bold text-slate-900 dark:text-slate-100">{task.progress}%</span>
                   </div>
                   <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                     <div
@@ -286,20 +286,20 @@ export default function TasksPage() {
               )}
 
               {/* Footer */}
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
                 <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-1 text-xs text-slate-500">
+                  <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
                     <span className="material-symbols-outlined text-sm">schedule</span>
                     {task.timeEstimate}
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-slate-700">
+                  <div className="flex items-center gap-1 text-xs font-bold text-slate-700 dark:text-slate-300">
                     <span className="material-symbols-outlined text-sm">event</span>
                     {task.deadline}
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className={`text-xs font-bold ${task.statusColor}`}>{task.status}</span>
-                  <span className="material-symbols-outlined text-slate-400 group-hover:text-orange-600 transition-colors">
+                  <span className="material-symbols-outlined text-slate-400 group-hover:text-orange-500 transition-colors">
                     arrow_forward
                   </span>
                 </div>

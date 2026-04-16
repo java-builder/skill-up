@@ -76,20 +76,20 @@ export default function CertificatesPage() {
       <div className="space-y-12">
         <section className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-primary to-primary-container p-6 sm:p-12 text-on-primary">
           <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 dark:bg-slate-800/20 backdrop-blur-md px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-4 sm:mb-6 text-slate-900 dark:text-slate-100">
               <span className="material-symbols-outlined text-xs sm:text-sm">military_tech</span>
               Thành tích học thuật
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black mb-3 sm:mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-black mb-3 sm:mb-4 leading-tight text-slate-900 dark:text-slate-100">
               Làm chủ kỹ năng,
               <br />
               Nhận huy hiệu của bạn.
             </h1>
-            <p className="text-base sm:text-lg opacity-90 mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg opacity-90 mb-6 sm:mb-8 text-slate-900 dark:text-slate-100">
               Theo dõi tiến độ của bạn tại Đại học FPT. Mỗi cột mốc đưa bạn đến gần hơn với xác thực tiêu chuẩn ngành. Bạn có {earnedCount} chứng chỉ đang hoạt động và {lockedCount} đang chờ mở khóa.
             </p>
             <div className="flex gap-4">
-              <button className="bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer text-sm sm:text-base">
+              <button className="bg-white dark:bg-slate-800 text-orange-500 dark:text-orange-500 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer text-sm sm:text-base">
                 <span className="material-symbols-outlined">share</span>
                 <span className="hidden sm:inline">Chia sẻ thành tích</span>
               </button>
@@ -108,8 +108,8 @@ export default function CertificatesPage() {
         <section className="space-y-6">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight">Kỹ năng đã xác minh</h2>
-              <p className="text-on-surface-variant text-sm sm:text-base">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Kỹ năng đã xác minh</h2>
+              <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
                 Chứng chỉ số đã kiếm được và lộ trình học tập tương lai của bạn.
               </p>
             </div>
@@ -118,8 +118,8 @@ export default function CertificatesPage() {
                 onClick={() => setFilter('all')}
                 className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'all'
-                    ? 'bg-surface-container-high'
-                    : 'text-on-surface-variant hover:bg-surface-container-high'
+                    ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
               >
                 Tất cả
@@ -128,8 +128,8 @@ export default function CertificatesPage() {
                 onClick={() => setFilter('earned')}
                 className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'earned'
-                    ? 'bg-surface-container-high'
-                    : 'text-on-surface-variant hover:bg-surface-container-high'
+                    ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
               >
                 Đã đạt
@@ -138,8 +138,8 @@ export default function CertificatesPage() {
                 onClick={() => setFilter('design')}
                 className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'design'
-                    ? 'bg-surface-container-high'
-                    : 'text-on-surface-variant hover:bg-surface-container-high'
+                    ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
               >
                 Thiết kế
@@ -148,8 +148,8 @@ export default function CertificatesPage() {
                 onClick={() => setFilter('development')}
                 className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors cursor-pointer whitespace-nowrap ${
                   filter === 'development'
-                    ? 'bg-surface-container-high'
-                    : 'text-on-surface-variant hover:bg-surface-container-high'
+                    ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`}
               >
                 Lập trình
@@ -163,32 +163,32 @@ export default function CertificatesPage() {
                 return (
                   <div
                     key={cert.id}
-                    className="group relative bg-surface-container-lowest rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-transparent hover:border-outline-variant/30"
+                    className="group relative bg-white dark:bg-slate-800 rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700"
                   >
-                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100">
+                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-700">
                       <img
                         alt={cert.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         src={cert.thumbnail}
                       />
-                      <div className="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-lg">
+                      <div className="absolute top-4 right-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-lg">
                         Đã đạt
                       </div>
                     </div>
                     <div className="flex-1 space-y-2">
-                      <h3 className="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-500 transition-colors">
                         {cert.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-on-surface-variant text-sm mb-4">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
                         <span className="material-symbols-outlined text-base">calendar_month</span>
                         Cấp ngày {cert.issueDate}
                       </div>
-                      <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                         {cert.description}
                       </p>
                     </div>
                     <div className="pt-6 mt-auto">
-                      <button className="w-full py-4 bg-secondary-container text-on-secondary-container rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity cursor-pointer">
+                      <button className="w-full py-4 bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity cursor-pointer">
                         <span className="material-symbols-outlined">file_download</span>
                         Tải PDF
                       </button>
@@ -201,10 +201,10 @@ export default function CertificatesPage() {
                 return (
                   <div
                     key={cert.id}
-                    className="group relative bg-surface-container-low/50 rounded-[2rem] p-6 flex flex-col h-full border-2 border-dashed border-outline-variant/40"
+                    className="group relative bg-slate-50 dark:bg-slate-800/50 rounded-[2rem] p-6 flex flex-col h-full border-2 border-dashed border-slate-300 dark:border-slate-600"
                   >
-                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-surface-container-high/40 flex items-center justify-center">
-                      <div className="text-center space-y-3 opacity-40 group-hover:opacity-60 transition-opacity">
+                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-700/40 flex items-center justify-center">
+                      <div className="text-center space-y-3 opacity-40 group-hover:opacity-60 transition-opacity text-slate-600 dark:text-slate-400">
                         <span
                           className="material-symbols-outlined text-6xl"
                           style={{ fontVariationSettings: "'FILL' 1" }}
@@ -213,34 +213,34 @@ export default function CertificatesPage() {
                         </span>
                         <div className="font-bold uppercase tracking-widest text-xs">Đã khóa</div>
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 dark:from-slate-800/80 to-transparent"></div>
                     </div>
                     <div className="flex-1 space-y-2">
                       <div className="flex justify-between items-start">
-                        <h3 className="text-xl font-bold text-on-surface-variant">{cert.title}</h3>
-                        <div className="bg-surface-container-highest px-2 py-1 rounded-md text-[10px] font-bold text-on-surface-variant">
+                        <h3 className="text-xl font-bold text-slate-700 dark:text-slate-300">{cert.title}</h3>
+                        <div className="bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded-md text-[10px] font-bold text-slate-700 dark:text-slate-300">
                           {cert.progress}% Yêu cầu
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-on-surface-variant text-sm mb-4">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
                         <span className="material-symbols-outlined text-base">lock_clock</span>
                         Yêu cầu: {cert.requiredXP?.toLocaleString()} XP
                       </div>
-                      <p className="text-sm text-on-surface-variant/60 leading-relaxed mb-6">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                         {cert.description}
                       </p>
                     </div>
                     <div className="pt-6 mt-auto">
-                      <div className="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-4">
+                      <div className="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden mb-4">
                         <div
-                          className="bg-primary h-full transition-all"
+                          className="bg-orange-500 h-full transition-all"
                           style={{
                             width: `${cert.progress}%`,
-                            boxShadow: '0 0 10px rgba(160, 65, 0, 0.4)',
+                            boxShadow: '0 0 10px rgba(249, 115, 22, 0.4)',
                           }}
                         ></div>
                       </div>
-                      <div className="flex justify-between text-xs font-bold text-on-surface-variant/50">
+                      <div className="flex justify-between text-xs font-bold text-slate-600 dark:text-slate-400">
                         <span>
                           {cert.currentXP?.toLocaleString()} / {cert.requiredXP?.toLocaleString()} XP
                         </span>
@@ -254,10 +254,10 @@ export default function CertificatesPage() {
               return (
                 <div
                   key={cert.id}
-                  className="group relative bg-surface-container-low/50 rounded-[2rem] p-6 flex flex-col h-full border-2 border-dashed border-outline-variant/40"
+                  className="group relative bg-slate-50 dark:bg-slate-800/50 rounded-[2rem] p-6 flex flex-col h-full border-2 border-dashed border-slate-300 dark:border-slate-600"
                 >
-                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-surface-container-high/40 flex items-center justify-center">
-                    <div className="text-center space-y-3 opacity-40 group-hover:opacity-60 transition-opacity">
+                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 dark:bg-slate-700/40 flex items-center justify-center">
+                    <div className="text-center space-y-3 opacity-40 group-hover:opacity-60 transition-opacity text-slate-600 dark:text-slate-400">
                       <span
                         className="material-symbols-outlined text-6xl"
                         style={{ fontVariationSettings: "'FILL' 1" }}
@@ -268,17 +268,17 @@ export default function CertificatesPage() {
                     </div>
                   </div>
                   <div className="flex-1 space-y-2">
-                    <h3 className="text-xl font-bold text-on-surface-variant">{cert.title}</h3>
-                    <div className="flex items-center gap-2 text-on-surface-variant text-sm mb-4">
+                    <h3 className="text-xl font-bold text-slate-700 dark:text-slate-300">{cert.title}</h3>
+                    <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
                       <span className="material-symbols-outlined text-base">auto_awesome</span>
                       Yêu cầu: {cert.requiredTokens} Tokens
                     </div>
-                    <p className="text-sm text-on-surface-variant/60 leading-relaxed mb-6">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                       {cert.description}
                     </p>
                   </div>
                   <div className="pt-6 mt-auto">
-                    <button className="w-full py-4 bg-outline/10 text-outline rounded-xl font-bold flex items-center justify-center gap-2 cursor-not-allowed">
+                    <button className="w-full py-4 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 rounded-xl font-bold flex items-center justify-center gap-2 cursor-not-allowed">
                       <span className="material-symbols-outlined">lock</span>
                       Không đủ Tokens
                     </button>
@@ -289,12 +289,12 @@ export default function CertificatesPage() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center bg-secondary-fixed rounded-2xl sm:rounded-[3rem] p-6 sm:p-12 overflow-hidden">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center bg-orange-50 dark:bg-slate-800 rounded-2xl sm:rounded-[3rem] p-6 sm:p-12 overflow-hidden border border-orange-100 dark:border-slate-700">
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            <h2 className="text-2xl sm:text-4xl font-black text-on-secondary-fixed leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 leading-tight">
               Bảng điểm số của bạn được xác minh bởi FPT Blockchain.
             </h2>
-            <p className="text-on-secondary-fixed-variant text-base sm:text-lg max-w-xl">
+            <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg max-w-xl">
               Mỗi chứng chỉ bạn kiếm được sẽ tự động được tạo thành chứng chỉ số có thể xác minh, đảm bảo tính toàn vẹn học thuật của bạn được công nhận toàn cầu bởi các đối tác doanh nghiệp.
             </p>
             <div className="flex items-center gap-4 sm:gap-6 pt-4">
@@ -302,37 +302,37 @@ export default function CertificatesPage() {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-secondary-fixed bg-slate-200 overflow-hidden"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-white dark:border-slate-800 bg-slate-200 overflow-hidden"
                   >
                     <div className="w-full h-full bg-gradient-to-br from-orange-200 to-blue-200"></div>
                   </div>
                 ))}
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-secondary-fixed bg-primary text-white flex items-center justify-center font-bold text-xs">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-4 border-white dark:border-slate-800 bg-orange-500 text-white flex items-center justify-center font-bold text-xs">
                   +1.2k
                 </div>
               </div>
-              <span className="text-xs sm:text-sm font-bold text-on-secondary-fixed-variant">
+              <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
                 Sinh viên được cấp chứng chỉ tháng này
               </span>
             </div>
           </div>
           <div className="lg:col-span-5 relative flex justify-center">
-            <div className="w-64 sm:w-72 h-80 sm:h-96 bg-white rounded-3xl shadow-2xl rotate-6 p-4 sm:p-6 space-y-4">
-              <div className="w-full h-32 sm:h-40 bg-orange-50 rounded-xl flex items-center justify-center">
+            <div className="w-64 sm:w-72 h-80 sm:h-96 bg-white dark:bg-slate-700 rounded-3xl shadow-2xl rotate-6 p-4 sm:p-6 space-y-4">
+              <div className="w-full h-32 sm:h-40 bg-orange-50 dark:bg-orange-900/30 rounded-xl flex items-center justify-center">
                 <span
-                  className="material-symbols-outlined text-primary text-5xl sm:text-6xl"
+                  className="material-symbols-outlined text-orange-500 text-5xl sm:text-6xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
                 </span>
               </div>
               <div className="space-y-2">
-                <div className="h-3 sm:h-4 w-3/4 bg-slate-100 rounded"></div>
-                <div className="h-3 sm:h-4 w-1/2 bg-slate-100 rounded"></div>
-                <div className="h-16 sm:h-20 w-full bg-slate-50 rounded-xl mt-4"></div>
+                <div className="h-3 sm:h-4 w-3/4 bg-slate-100 dark:bg-slate-600 rounded"></div>
+                <div className="h-3 sm:h-4 w-1/2 bg-slate-100 dark:bg-slate-600 rounded"></div>
+                <div className="h-16 sm:h-20 w-full bg-slate-50 dark:bg-slate-600 rounded-xl mt-4"></div>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary-fixed via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-orange-50 dark:from-slate-800 via-transparent to-transparent"></div>
           </div>
         </section>
       </div>

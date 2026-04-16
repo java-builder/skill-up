@@ -93,17 +93,17 @@ export default function CoursesPage() {
       <div className="space-y-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Khóa học</h2>
-            <p className="text-slate-500 mt-1 text-sm sm:text-base">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100">Khóa học</h2>
+            <p className="text-slate-500 dark:text-slate-400 mt-1 text-sm sm:text-base">
               Khám phá và đăng ký các khóa học tại FPT University
             </p>
           </div>
           <div className="flex gap-3 w-full sm:w-auto">
-            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-orange-300 transition-all cursor-pointer text-sm">
+            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-orange-300 dark:hover:border-orange-400 transition-all cursor-pointer text-sm">
               <span className="material-symbols-outlined text-lg">bookmark</span>
               <span className="hidden sm:inline">Đã lưu</span>
             </button>
-            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-orange-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-700 transition-all shadow-lg cursor-pointer text-sm">
+            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-orange-500 dark:bg-orange-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-500 dark:hover:bg-orange-500 transition-all shadow-lg cursor-pointer text-sm">
               <span className="material-symbols-outlined text-lg">school</span>
               <span className="hidden sm:inline">Khóa của tôi</span>
             </button>
@@ -118,8 +118,8 @@ export default function CoursesPage() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer whitespace-nowrap ${
                   activeFilter === filter.id
-                    ? 'bg-orange-600 text-white shadow-lg'
-                    : 'bg-white border border-slate-200 text-slate-600 hover:border-orange-300'
+                    ? 'bg-orange-500 dark:bg-orange-500 text-white shadow-lg'
+                    : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-orange-300 dark:hover:border-orange-400'
                 }`}
               >
                 {filter.label}
@@ -129,13 +129,13 @@ export default function CoursesPage() {
           </div>
 
           <div className="flex items-center gap-3 w-full lg:w-auto">
-            <select className="flex-1 lg:flex-none bg-white border border-slate-200 rounded-xl text-sm font-bold px-4 py-2 focus:ring-2 focus:ring-orange-500 cursor-pointer">
+            <select className="flex-1 lg:flex-none bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-bold px-4 py-2 text-slate-700 dark:text-slate-300 focus:ring-2 focus:ring-orange-500 cursor-pointer transition-colors">
               <option>Tiến độ: Tất cả</option>
               <option>Đang học</option>
               <option>Hoàn thành</option>
               <option>Chưa bắt đầu</option>
             </select>
-            <button className="p-2.5 bg-white border border-slate-200 rounded-xl hover:border-orange-300 transition-colors cursor-pointer">
+            <button className="p-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-orange-300 dark:hover:border-orange-400 transition-colors cursor-pointer text-slate-700 dark:text-slate-300">
               <span className="material-symbols-outlined text-sm">tune</span>
             </button>
           </div>

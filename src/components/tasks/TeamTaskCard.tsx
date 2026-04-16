@@ -6,7 +6,7 @@ const teamMembers = [
 
 export default function TeamTaskCard() {
   return (
-    <div className="md:col-span-2 group relative bg-surface-container-lowest rounded-2xl p-8 flex flex-col md:flex-row gap-8 transition-all hover:shadow-2xl">
+    <div className="md:col-span-2 group relative bg-white dark:bg-slate-800 rounded-2xl p-8 flex flex-col md:flex-row gap-8 transition-all hover:shadow-2xl border border-slate-200 dark:border-slate-700">
       <div className="flex-shrink-0 w-full md:w-48 h-48 rounded-2xl overflow-hidden relative">
         <img
           alt="Học nhóm"
@@ -19,15 +19,15 @@ export default function TeamTaskCard() {
       </div>
       <div className="flex-grow flex flex-col justify-center">
         <div className="flex items-center gap-2 mb-2">
-          <span className="bg-orange-100 text-orange-600 px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest">
+          <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-400 px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest transition-colors">
             Đang hoạt động
           </span>
-          <span className="text-on-surface-variant text-xs font-medium">
+          <span className="text-slate-600 dark:text-slate-400 text-xs font-medium transition-colors">
             Hoạt động nhóm • Phòng #204
           </span>
         </div>
-        <h3 className="text-2xl font-black mb-3">Workshop kiến trúc Front-end</h3>
-        <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">
+        <h3 className="text-2xl font-black mb-3 text-slate-900 dark:text-slate-100 transition-colors">Workshop kiến trúc Front-end</h3>
+        <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed transition-colors">
           Hợp tác với 3 sinh viên khác để thiết kế kiến trúc hệ thống thiết kế có thể mở rộng cho ứng dụng thương mại di động.
         </p>
         <div className="flex flex-wrap items-center gap-6">
@@ -36,19 +36,19 @@ export default function TeamTaskCard() {
               <img
                 key={index}
                 alt={`Thành viên ${index + 1}`}
-                className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800 object-cover transition-colors"
                 src={avatar}
               />
             ))}
-            <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-900 dark:text-slate-100 transition-colors">
               +1
             </div>
           </div>
-          <div className="flex items-center gap-1 text-on-surface-variant">
+          <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400 transition-colors">
             <span className="material-symbols-outlined text-sm">stars</span>
             <span className="text-xs font-bold">Nhận danh hiệu 'Kiến trúc sư trưởng'</span>
           </div>
-          <button className="ml-auto bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-xl font-bold text-sm transform active:scale-95 transition-all cursor-pointer">
+          <button className="ml-auto bg-gradient-to-br from-orange-400 to-orange-500 dark:from-orange-500 dark:to-orange-500 text-white px-8 py-3 rounded-xl font-bold text-sm transform active:scale-95 transition-all cursor-pointer">
             Bắt đầu Workshop
           </button>
         </div>

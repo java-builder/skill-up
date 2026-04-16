@@ -20,7 +20,7 @@ export default function DashboardPage() {
               <span className="material-symbols-outlined">download</span>
               Xuất báo cáo
             </button>
-            <button className="px-6 py-3 bg-primary text-on-primary rounded-3xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-orange-600/20 cursor-pointer">
+            <button className="px-6 py-3 bg-primary text-on-primary rounded-3xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-orange-500/20 cursor-pointer">
               <span className="material-symbols-outlined">add</span>
               Bài tập mới
             </button>
@@ -31,7 +31,7 @@ export default function DashboardPage() {
           <StatsCard
             icon="school"
             iconBg="bg-orange-100"
-            iconColor="text-orange-600"
+            iconColor="text-orange-500"
             badge="+12.5%"
             badgeColor="text-green-600 bg-green-50"
             title="XP trung bình sinh viên"
@@ -43,7 +43,7 @@ export default function DashboardPage() {
             iconBg="bg-blue-100"
             iconColor="text-blue-600"
             badge="88% Mục tiêu"
-            badgeColor="text-orange-600 bg-orange-50"
+            badgeColor="text-orange-500 bg-orange-50"
             title="Tỷ lệ hoàn thành"
             value="92.4%"
             decorIcon="analytics"
@@ -94,13 +94,13 @@ export default function DashboardPage() {
                   <span>78%</span>
                 </div>
                 <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-orange-600 to-orange-400 w-[78%] transition-all"></div>
+                  <div className="h-full bg-gradient-to-r from-orange-500 to-orange-400 w-[78%] transition-all"></div>
                 </div>
               </div>
             </div>
             <div className="w-48 h-48 bg-orange-50 rounded-full flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-orange-600/5 rounded-full scale-110 blur-xl"></div>
-              <span className="material-symbols-outlined text-7xl text-orange-600">trending_up</span>
+              <div className="absolute inset-0 bg-orange-500/5 rounded-full scale-110 blur-xl"></div>
+              <span className="material-symbols-outlined text-7xl text-orange-500">trending_up</span>
             </div>
           </div>
 

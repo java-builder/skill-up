@@ -6,9 +6,9 @@ const badges = [
     name: 'Code Phoenix',
     description: 'Hoàn thành 100 module không lỗi',
     icon: 'local_fire_department',
-    color: 'bg-orange-50 text-orange-600',
+    color: 'bg-orange-50 text-orange-500',
     rarity: 'LEGENDARY',
-    rarityColor: 'bg-orange-600',
+    rarityColor: 'bg-orange-500',
     unlocked: true,
   },
   {
@@ -68,13 +68,13 @@ export default function ProfilePage() {
       <div className="space-y-12">
         {/* Profile Header */}
         <section className="relative">
-          <div className="h-32 sm:h-48 w-full rounded-2xl bg-gradient-to-br from-primary to-primary-container overflow-hidden relative">
+          <div className="h-32 sm:h-48 w-full rounded-2xl bg-gradient-to-br from-orange-500 to-orange-500 overflow-hidden relative">
             <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
             <div className="absolute -bottom-12 right-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           </div>
 
           <div className="flex flex-col md:flex-row items-end gap-4 sm:gap-8 -mt-12 sm:-mt-16 px-4 sm:px-8 relative z-10">
-            <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-2xl border-4 sm:border-8 border-surface bg-surface-container-lowest overflow-hidden shadow-2xl">
+            <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-2xl border-4 sm:border-8 border-white dark:border-slate-900 bg-white dark:bg-slate-800 overflow-hidden shadow-2xl">
               <img
                 alt="Avatar sinh viên"
                 className="w-full h-full object-cover"
@@ -84,12 +84,12 @@ export default function ProfilePage() {
 
             <div className="flex-1 pb-2 sm:pb-4 w-full">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
-                <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">Nguyễn Văn An</h2>
-                <span className="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider w-fit">
+                <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Nguyễn Văn An</h2>
+                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider w-fit">
                   Sinh viên Danh dự
                 </span>
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-on-surface-variant font-medium text-xs sm:text-base">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-slate-600 dark:text-slate-400 font-medium text-xs sm:text-base">
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-sm sm:text-base">id_card</span>
                   DE170001
@@ -98,7 +98,7 @@ export default function ProfilePage() {
                   <span className="material-symbols-outlined text-sm sm:text-base">location_on</span>
                   Cơ sở Đà Nẵng
                 </span>
-                <span className="flex items-center gap-1.5 text-orange-600 font-bold">
+                <span className="flex items-center gap-1.5 text-orange-500 dark:text-orange-500 font-bold">
                   <span
                     className="material-symbols-outlined text-sm sm:text-base"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -111,7 +111,7 @@ export default function ProfilePage() {
             </div>
 
             <div className="pb-2 sm:pb-4 w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-surface-container-lowest text-on-surface font-bold rounded-xl shadow-md border border-outline-variant/10 hover:bg-surface-container hover:-translate-y-1 transition-all flex items-center justify-center gap-2 cursor-pointer text-sm">
+              <button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold rounded-xl shadow-md border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 cursor-pointer text-sm">
                 <span className="material-symbols-outlined">edit</span>
                 Chỉnh sửa hồ sơ
               </button>
@@ -122,15 +122,15 @@ export default function ProfilePage() {
         {/* Stats Grid */}
         <div className="grid grid-cols-12 gap-8">
           {/* Academic Competencies */}
-          <div className="col-span-12 lg:col-span-8 bg-surface-container-lowest p-4 sm:p-8 rounded-2xl shadow-sm relative overflow-hidden">
+          <div className="col-span-12 lg:col-span-8 bg-white dark:bg-slate-800 p-4 sm:p-8 rounded-2xl shadow-sm relative overflow-hidden border border-slate-100 dark:border-slate-700">
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6 sm:mb-8">
               <div>
-                <h3 className="text-lg sm:text-xl font-bold">Năng lực học thuật</h3>
-                <p className="text-on-surface-variant text-xs sm:text-sm mt-1">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">Năng lực học thuật</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1">
                   Dựa trên hoàn thành khóa học và kết quả bài kiểm tra
                 </p>
               </div>
-              <span className="px-3 sm:px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap">
+              <span className="px-3 sm:px-4 py-1.5 bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-500 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap">
                 Cập nhật hôm nay
               </span>
             </div>
@@ -138,32 +138,32 @@ export default function ProfilePage() {
             <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
               {/* Radar Chart Placeholder */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center flex-shrink-0">
-                <div className="absolute inset-6 sm:inset-8 rounded-full border-[12px] sm:border-[16px] border-surface-container-low"></div>
-                <div className="absolute inset-10 sm:inset-12 rounded-full border-[8px] sm:border-[12px] border-orange-100"></div>
-                <div className="absolute inset-14 sm:inset-16 rounded-full border-[6px] sm:border-[8px] border-orange-200"></div>
-                <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary to-primary-container rounded-full shadow-lg flex flex-col items-center justify-center text-white">
+                <div className="absolute inset-6 sm:inset-8 rounded-full border-[12px] sm:border-[16px] border-slate-100 dark:border-slate-700"></div>
+                <div className="absolute inset-10 sm:inset-12 rounded-full border-[8px] sm:border-[12px] border-orange-100 dark:border-orange-900/30"></div>
+                <div className="absolute inset-14 sm:inset-16 rounded-full border-[6px] sm:border-[8px] border-orange-200 dark:border-orange-900/50"></div>
+                <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-orange-500 to-orange-500 rounded-full shadow-lg flex flex-col items-center justify-center text-white">
                   <span className="text-2xl sm:text-3xl font-black">92</span>
                   <span className="text-[8px] sm:text-[10px] font-bold uppercase">Chỉ số</span>
                 </div>
-                <div className="absolute top-1 sm:top-2 left-1/2 -translate-x-1/2 font-bold text-xs sm:text-sm">Lập trình</div>
-                <div className="absolute top-1/4 -right-1 sm:-right-2 font-bold text-xs sm:text-sm">Toán</div>
-                <div className="absolute bottom-1/4 -right-1 sm:-right-2 font-bold text-xs sm:text-sm">Logic</div>
-                <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 font-bold text-xs sm:text-sm">Thiết kế</div>
-                <div className="absolute bottom-1/4 -left-2 sm:-left-4 font-bold text-xs sm:text-sm">Kỹ năng mềm</div>
-                <div className="absolute top-1/4 left-4 sm:left-6 font-bold text-xs sm:text-sm">AI</div>
+                <div className="absolute top-1 sm:top-2 left-1/2 -translate-x-1/2 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">Lập trình</div>
+                <div className="absolute top-1/4 -right-1 sm:-right-2 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">Toán</div>
+                <div className="absolute bottom-1/4 -right-1 sm:-right-2 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">Logic</div>
+                <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">Thiết kế</div>
+                <div className="absolute bottom-1/4 -left-2 sm:-left-4 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">Kỹ năng mềm</div>
+                <div className="absolute top-1/4 left-4 sm:left-6 font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">AI</div>
               </div>
 
               {/* Skills Progress */}
               <div className="flex-1 w-full space-y-4 sm:space-y-6">
                 {skills.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between text-xs sm:text-sm font-bold mb-2">
+                    <div className="flex justify-between text-xs sm:text-sm font-bold mb-2 text-slate-900 dark:text-slate-100">
                       <span>{skill.name}</span>
-                      <span className="text-primary">{skill.progress}%</span>
+                      <span className="text-orange-500 dark:text-orange-500">{skill.progress}%</span>
                     </div>
-                    <div className="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+                    <div className="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-primary to-primary-container rounded-full"
+                        className="h-full bg-gradient-to-r from-orange-500 to-orange-500 rounded-full"
                         style={{ width: `${skill.progress}%` }}
                       ></div>
                     </div>
@@ -175,20 +175,20 @@ export default function ProfilePage() {
 
           {/* Gamified Stats */}
           <div className="col-span-12 lg:col-span-4 grid grid-cols-1 gap-8">
-            <div className="bg-secondary-container/30 p-8 rounded-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <div className="bg-orange-50 dark:bg-orange-900/20 p-8 rounded-2xl relative overflow-hidden group border border-orange-100 dark:border-orange-900/30">
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-orange-500 dark:text-orange-500">
                 <span className="material-symbols-outlined text-6xl">trophy</span>
               </div>
-              <p className="text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-1">
+              <p className="text-orange-700 dark:text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">
                 Xếp hạng trong lớp
               </p>
-              <h4 className="text-4xl font-black text-on-secondary-container">Top 3%</h4>
-              <p className="text-on-secondary-container/70 text-sm mt-4">
+              <h4 className="text-4xl font-black text-orange-500 dark:text-orange-500">Top 3%</h4>
+              <p className="text-orange-500 dark:text-orange-400 text-sm mt-4">
                 Vượt qua 142 sinh viên tuần này.
               </p>
             </div>
 
-            <div className="bg-tertiary-container p-8 rounded-2xl text-white relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-orange-500 to-orange-500 p-8 rounded-2xl text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-4 opacity-20">
                 <span className="material-symbols-outlined text-6xl">auto_awesome</span>
               </div>
@@ -201,13 +201,13 @@ export default function ProfilePage() {
           </div>
 
           {/* Badge Collection */}
-          <div className="col-span-12 bg-surface-container-low p-4 sm:p-8 rounded-2xl">
+          <div className="col-span-12 bg-white dark:bg-slate-800 p-4 sm:p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-6 sm:mb-10">
               <div>
-                <h3 className="text-xl sm:text-2xl font-black">Bộ sưu tập huy hiệu</h3>
-                <p className="text-on-surface-variant text-sm">24/60 vật phẩm hiếm đã khám phá</p>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100">Bộ sưu tập huy hiệu</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">24/60 vật phẩm hiếm đã khám phá</p>
               </div>
-              <button className="text-primary font-bold hover:underline flex items-center gap-1 cursor-pointer text-sm">
+              <button className="text-orange-500 dark:text-orange-500 font-bold hover:underline flex items-center gap-1 cursor-pointer text-sm">
                 Xem toàn bộ
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
@@ -217,7 +217,7 @@ export default function ProfilePage() {
               {badges.map((badge) => (
                 <div
                   key={badge.id}
-                  className={`bg-surface-container-lowest p-4 sm:p-6 rounded-2xl shadow-sm text-center relative group cursor-help border border-transparent hover:border-primary/20 transition-all ${
+                  className={`bg-white dark:bg-slate-700 p-4 sm:p-6 rounded-2xl shadow-sm text-center relative group cursor-help border border-slate-100 dark:border-slate-600 hover:border-orange-300 dark:hover:border-orange-700 transition-all ${
                     !badge.unlocked ? 'opacity-50 grayscale' : ''
                   }`}
                 >
@@ -238,45 +238,45 @@ export default function ProfilePage() {
                       {badge.icon}
                     </span>
                   </div>
-                  <h5 className="text-xs sm:text-sm font-bold">{badge.name}</h5>
-                  <p className="text-[9px] sm:text-[10px] text-on-surface-variant mt-1 leading-tight">{badge.description}</p>
+                  <h5 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100">{badge.name}</h5>
+                  <p className="text-[9px] sm:text-[10px] text-slate-600 dark:text-slate-400 mt-1 leading-tight">{badge.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Settings */}
-          <div className="col-span-12 lg:col-span-7 bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10">
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+          <div className="col-span-12 lg:col-span-7 bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-slate-100">
               <span className="material-symbols-outlined">settings</span>
               Tùy chọn tài khoản
             </h3>
 
             <div className="space-y-8">
               <div className="flex flex-col gap-4">
-                <label className="text-sm font-bold">Thông báo</label>
+                <label className="text-sm font-bold text-slate-900 dark:text-slate-100">Thông báo</label>
                 <div className="space-y-3">
-                  <label className="flex items-center justify-between p-4 bg-surface-container rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+                  <label className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-700 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                     <div className="flex gap-4 items-center">
-                      <span className="material-symbols-outlined text-primary">bolt</span>
+                      <span className="material-symbols-outlined text-orange-500 dark:text-orange-500">bolt</span>
                       <div>
-                        <p className="font-bold text-sm">Nhắc nhở học tập</p>
-                        <p className="text-[10px] text-on-surface-variant">Nhắc tôi khi đến giờ học</p>
+                        <p className="font-bold text-sm text-slate-900 dark:text-slate-100">Nhắc nhở học tập</p>
+                        <p className="text-[10px] text-slate-600 dark:text-slate-400">Nhắc tôi khi đến giờ học</p>
                       </div>
                     </div>
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="form-checkbox h-5 w-5 text-primary rounded border-none bg-white focus:ring-0 cursor-pointer"
+                      className="form-checkbox h-5 w-5 text-orange-500 rounded border-none bg-white focus:ring-0 cursor-pointer"
                     />
                   </label>
 
-                  <label className="flex items-center justify-between p-4 bg-surface-container rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+                  <label className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-700 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                     <div className="flex gap-4 items-center">
-                      <span className="material-symbols-outlined text-secondary">group</span>
+                      <span className="material-symbols-outlined text-blue-600 dark:text-blue-500">group</span>
                       <div>
-                        <p className="font-bold text-sm">Nhắc đến cộng đồng</p>
-                        <p className="text-[10px] text-on-surface-variant">
+                        <p className="font-bold text-sm text-slate-900 dark:text-slate-100">Nhắc đến cộng đồng</p>
+                        <p className="text-[10px] text-slate-600 dark:text-slate-400">
                           Thông báo khi đồng đội tag tôi trong dự án
                         </p>
                       </div>
@@ -284,19 +284,19 @@ export default function ProfilePage() {
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="form-checkbox h-5 w-5 text-primary rounded border-none bg-white focus:ring-0 cursor-pointer"
+                      className="form-checkbox h-5 w-5 text-orange-500 rounded border-none bg-white focus:ring-0 cursor-pointer"
                     />
                   </label>
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-bold block mb-4">Quyền riêng tư</label>
+                <label className="text-sm font-bold block mb-4 text-slate-900 dark:text-slate-100">Quyền riêng tư</label>
                 <div className="flex gap-3">
-                  <button className="flex-1 py-3 px-4 bg-primary text-white font-bold rounded-xl text-sm cursor-pointer">
+                  <button className="flex-1 py-3 px-4 bg-orange-500 text-white font-bold rounded-xl text-sm cursor-pointer hover:bg-orange-700 transition-colors">
                     Công khai
                   </button>
-                  <button className="flex-1 py-3 px-4 bg-surface-container text-on-surface font-bold rounded-xl text-sm border border-transparent hover:border-outline-variant cursor-pointer">
+                  <button className="flex-1 py-3 px-4 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 font-bold rounded-xl text-sm border border-transparent hover:border-slate-300 dark:hover:border-slate-600 cursor-pointer transition-colors">
                     Ẩn danh
                   </button>
                 </div>
@@ -306,21 +306,21 @@ export default function ProfilePage() {
 
           {/* Side Progress */}
           <div className="col-span-12 lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-orange-100">
+            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex items-center justify-between mb-6">
-                <h4 className="font-black">Mục tiêu XP tuần</h4>
-                <span className="text-primary font-bold">85%</span>
+                <h4 className="font-black text-slate-900 dark:text-slate-100">Mục tiêu XP tuần</h4>
+                <span className="text-orange-500 dark:text-orange-500 font-bold">85%</span>
               </div>
               <div className="flex gap-2 mb-8">
                 {[1, 2, 3, 4, 5].map((day) => (
-                  <div key={day} className="flex-1 h-12 bg-primary rounded-lg"></div>
+                  <div key={day} className="flex-1 h-12 bg-orange-500 rounded-lg"></div>
                 ))}
-                <div className="flex-1 h-12 bg-surface-container-high rounded-lg relative">
-                  <div className="absolute inset-0 bg-primary w-1/2 rounded-l-lg"></div>
+                <div className="flex-1 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg relative">
+                  <div className="absolute inset-0 bg-orange-500 w-1/2 rounded-l-lg"></div>
                 </div>
-                <div className="flex-1 h-12 bg-surface-container-high rounded-lg"></div>
+                <div className="flex-1 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg"></div>
               </div>
-              <p className="text-xs text-on-surface-variant italic">
+              <p className="text-xs text-slate-600 dark:text-slate-400 italic">
                 Chỉ còn 450 XP nữa để đạt phần thưởng chuỗi tuần! Tiếp tục nào, An.
               </p>
             </div>

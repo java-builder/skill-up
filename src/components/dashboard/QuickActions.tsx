@@ -7,7 +7,7 @@ const actions = [
 
 export default function QuickActions() {
   return (
-    <div className="bg-primary-container p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
+    <div className="bg-gradient-to-br from-orange-400 to-orange-500 dark:from-orange-500 dark:to-orange-500 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden transition-colors">
       <div className="relative z-10">
         <h3 className="text-xl font-black mb-4">Hành động nhanh</h3>
         <div className="grid grid-cols-2 gap-3">

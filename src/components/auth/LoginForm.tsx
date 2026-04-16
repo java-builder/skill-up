@@ -19,8 +19,8 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
   return (
     <>
       <div className="mb-10 text-center lg:text-left">
-        <h3 className="text-2xl font-bold text-on-surface mb-2">Chào mừng trở lại</h3>
-        <p className="text-on-surface-variant">Truy cập bảng điều khiển và hồ sơ học tập của bạn.</p>
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors">Chào mừng trở lại</h3>
+        <p className="text-slate-600 dark:text-slate-400 transition-colors">Truy cập bảng điều khiển và hồ sơ học tập của bạn.</p>
       </div>
 
       <RoleToggle
@@ -39,10 +39,10 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
 
         <div className="space-y-2">
           <div className="flex justify-between items-center px-1">
-            <label className="text-sm font-bold text-on-surface-variant" htmlFor="password">
+            <label className="text-sm font-bold text-slate-600 dark:text-slate-400 transition-colors" htmlFor="password">
               Mật khẩu
             </label>
-            <a className="text-xs font-bold text-orange-600 hover:underline" href="#">
+            <a className="text-xs font-bold text-orange-500 dark:text-orange-400 hover:underline transition-colors" href="#">
               Quên mật khẩu?
             </a>
           </div>
@@ -57,7 +57,7 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         </div>
 
         <button
-          className="w-full bg-orange-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+          className="w-full bg-orange-500 dark:bg-orange-500 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-500/20 dark:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           type="submit"
         >
           Đăng nhập
@@ -66,20 +66,20 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
 
       <div className="relative my-10">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-outline-variant/30"></div>
+          <div className="w-full border-t border-slate-200 dark:border-slate-700 transition-colors"></div>
         </div>
-        <div className="relative flex justify-center text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-          <span className="bg-surface px-4">Hoặc tiếp tục với</span>
+        <div className="relative flex justify-center text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 transition-colors">
+          <span className="bg-white dark:bg-slate-800 px-4 transition-colors">Hoặc tiếp tục với</span>
         </div>
       </div>
 
       <SocialButtons />
 
-      <p className="text-center text-on-surface-variant text-sm font-medium mt-10">
+      <p className="text-center text-slate-600 dark:text-slate-400 text-sm font-medium mt-10 transition-colors">
         Mới tham gia Academic Pulse?{' '}
         <button
           onClick={onSwitchToRegister}
-          className="text-orange-600 font-bold hover:underline cursor-pointer"
+          className="text-orange-500 dark:text-orange-400 font-bold hover:underline cursor-pointer transition-colors"
         >
           Tạo tài khoản
         </button>

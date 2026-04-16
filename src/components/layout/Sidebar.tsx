@@ -33,12 +33,12 @@ export default function Sidebar() {
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed left-0 top-0 h-full w-64 flex flex-col bg-slate-50 z-[55] transition-transform duration-300 shadow-xl lg:shadow-none ${
+      <aside className={`fixed left-0 top-0 h-full w-64 flex flex-col bg-slate-50 dark:bg-slate-900 z-[55] transition-all duration-300 shadow-xl lg:shadow-none ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       }`}>
         <div className="p-6 lg:p-8">
-          <h1 className="text-xl font-black text-orange-600 tracking-tight">Academic Pulse</h1>
-          <p className="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1 opacity-60">
+          <h1 className="text-xl font-black text-orange-500 dark:text-orange-400 tracking-tight">Academic Pulse</h1>
+          <p className="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 mt-1 opacity-60">
             Đại học FPT Đà Nẵng
           </p>
         </div>
@@ -53,8 +53,8 @@ export default function Sidebar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all cursor-pointer ${
                   isActive
-                    ? 'text-orange-600 font-bold border-r-4 border-orange-600 bg-orange-50'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-orange-50'
+                    ? 'text-orange-500 dark:text-orange-400 font-bold border-r-4 border-orange-500 dark:border-orange-400 bg-orange-50 dark:bg-orange-950/30'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-orange-50 dark:hover:bg-slate-800'
                 }`}
               >
                 <span className="material-symbols-outlined">{item.icon}</span>
@@ -64,10 +64,10 @@ export default function Sidebar() {
           })}
         </nav>
 
-        <div className="p-4 border-t border-slate-200/50">
+        <div className="p-4 border-t border-slate-200/50 dark:border-slate-700/50">
           <button 
             onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-500 hover:bg-slate-100 transition-colors w-full cursor-pointer"
+            className="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-full cursor-pointer"
           >
             <span className="material-symbols-outlined">logout</span>
             <span>Đăng xuất</span>

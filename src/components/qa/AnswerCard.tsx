@@ -53,7 +53,7 @@ export default function AnswerCard(props: AnswerCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-colors">
       <div className="flex gap-6">
         {/* Vote Column */}
         <div className="flex flex-col items-center gap-3 min-w-[60px]">
@@ -61,16 +61,16 @@ export default function AnswerCard(props: AnswerCardProps) {
             onClick={handleLike}
             className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors cursor-pointer ${
               isLiked
-                ? 'bg-orange-50 text-orange-600'
-                : 'bg-slate-50 text-slate-600 hover:bg-orange-50 hover:text-orange-600'
+                ? 'bg-orange-50 dark:bg-orange-900/30 text-orange-500 dark:text-orange-400'
+                : 'bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-orange-900/30 hover:text-orange-500 dark:hover:text-orange-400'
             }`}
           >
             <span className="material-symbols-outlined text-xl">thumb_up</span>
             <span className="text-sm font-bold">{likes}</span>
           </button>
           {props.isAccepted && (
-            <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined text-green-600 text-xl">check_circle</span>
+            <div className="w-10 h-10 bg-green-50 dark:bg-green-900/30 rounded-lg flex items-center justify-center transition-colors">
+              <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-xl transition-colors">check_circle</span>
             </div>
           )}
         </div>
@@ -84,34 +84,34 @@ export default function AnswerCard(props: AnswerCardProps) {
               className="w-8 h-8 rounded-full object-cover"
             />
             <div>
-              <div className="text-sm font-bold text-slate-900">{props.author.name}</div>
-              <div className="text-xs text-slate-500">{props.author.role} • {props.createdAt}</div>
+              <div className="text-sm font-bold text-slate-900 dark:text-slate-100 transition-colors">{props.author.name}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 transition-colors">{props.author.role} • {props.createdAt}</div>
             </div>
             {props.isAccepted && (
-              <span className="ml-auto px-3 py-1 bg-green-50 text-green-600 rounded-lg text-xs font-bold">
+              <span className="ml-auto px-3 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg text-xs font-bold transition-colors">
                 Câu trả lời được chấp nhận
               </span>
             )}
           </div>
 
-          <div className="prose prose-slate max-w-none mb-4">
-            <p className="text-slate-700 whitespace-pre-line">{props.content}</p>
+          <div className="prose prose-slate dark:prose-invert max-w-none mb-4">
+            <p className="text-slate-700 dark:text-slate-300 whitespace-pre-line transition-colors">{props.content}</p>
           </div>
 
           {/* Comments */}
           {props.comments.length > 0 && (
-            <div className="mt-4 pt-4 border-t border-slate-100 space-y-3">
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 space-y-3 transition-colors">
               {props.comments.map((comment) => (
-                <div key={comment.id} className="flex gap-3 bg-slate-50 p-3 rounded-lg">
+                <div key={comment.id} className="flex gap-3 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg transition-colors">
                   <img
                     src={comment.author.avatar}
                     alt={comment.author.name}
                     className="w-6 h-6 rounded-full object-cover"
                   />
                   <div className="flex-1">
-                    <div className="text-xs font-bold text-slate-900">{comment.author.name}</div>
-                    <p className="text-sm text-slate-700 mt-1">{comment.content}</p>
-                    <span className="text-xs text-slate-500 mt-1 block">{comment.createdAt}</span>
+                    <div className="text-xs font-bold text-slate-900 dark:text-slate-100 transition-colors">{comment.author.name}</div>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 mt-1 transition-colors">{comment.content}</p>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 block transition-colors">{comment.createdAt}</span>
                   </div>
                 </div>
               ))}
@@ -120,11 +120,11 @@ export default function AnswerCard(props: AnswerCardProps) {
 
           {/* Comment Form */}
           {showCommentForm ? (
-            <form onSubmit={handleSubmitComment} className="mt-4 pt-4 border-t border-slate-100">
+            <form onSubmit={handleSubmitComment} className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
               <textarea
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
-                className="w-full p-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+                className="w-full p-3 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 resize-none transition-colors"
                 rows={3}
                 placeholder="Viết bình luận..."
                 autoFocus
@@ -133,13 +133,13 @@ export default function AnswerCard(props: AnswerCardProps) {
                 <button
                   type="button"
                   onClick={() => setShowCommentForm(false)}
-                  className="px-4 py-2 text-sm font-bold text-slate-600 hover:text-slate-900 cursor-pointer"
+                  className="px-4 py-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 cursor-pointer transition-colors"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-bold hover:bg-orange-700 transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-orange-500 dark:bg-orange-500 text-white rounded-lg text-sm font-bold hover:bg-orange-500 dark:hover:bg-orange-500 transition-colors cursor-pointer"
                 >
                   Gửi
                 </button>
@@ -148,7 +148,7 @@ export default function AnswerCard(props: AnswerCardProps) {
           ) : (
             <button
               onClick={() => setShowCommentForm(true)}
-              className="mt-4 text-sm font-bold text-orange-600 hover:underline cursor-pointer"
+              className="mt-4 text-sm font-bold text-orange-500 dark:text-orange-400 hover:underline cursor-pointer transition-colors"
             >
               Thêm bình luận
             </button>

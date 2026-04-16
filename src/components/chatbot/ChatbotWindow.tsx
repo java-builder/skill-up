@@ -71,7 +71,7 @@ export default function ChatbotWindow({ onClose }: ChatbotWindowProps) {
     <div className="fixed bottom-6 right-6 w-96 z-50 animate-in slide-in-from-bottom-4 duration-300">
       <div className="bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-3 flex items-center justify-between cursor-pointer" onClick={() => setIsMinimized(!isMinimized)}>
+        <div className="bg-gradient-to-r from-orange-500 to-orange-500 px-4 py-3 flex items-center justify-between cursor-pointer" onClick={() => setIsMinimized(!isMinimized)}>
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
               <span className="material-symbols-outlined text-white text-xl">smart_toy</span>
@@ -118,7 +118,7 @@ export default function ChatbotWindow({ onClose }: ChatbotWindowProps) {
                   <div
                     className={`max-w-[80%] rounded-2xl px-3 py-2 ${
                       message.sender === 'user'
-                        ? 'bg-orange-600 text-white rounded-br-sm'
+                        ? 'bg-orange-500 text-white rounded-br-sm'
                         : 'bg-white text-slate-800 rounded-bl-sm shadow-sm'
                     }`}
                   >
@@ -161,12 +161,12 @@ export default function ChatbotWindow({ onClose }: ChatbotWindowProps) {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Nhập tin nhắn..."
-                  className="flex-1 px-3 py-2 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-orange-600/20 focus:bg-white transition-all text-xs"
+                  className="flex-1 px-3 py-2 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-orange-500/20 focus:bg-white transition-all text-xs"
                 />
                 <button
                   onClick={handleSend}
                   disabled={!inputValue.trim()}
-                  className="px-3 py-2 bg-orange-600 text-white rounded-xl hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
+                  className="px-3 py-2 bg-orange-500 text-white rounded-xl hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
                 >
                   <span className="material-symbols-outlined text-lg">send</span>
                 </button>

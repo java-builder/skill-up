@@ -3,7 +3,7 @@ const achievements = [
     id: 1,
     icon: 'military_tech',
     bgColor: 'bg-orange-100',
-    iconColor: 'text-orange-600',
+    iconColor: 'text-orange-500',
     title: 'Chim sớm',
     description: 'Nộp 5 bài tập sớm 24h',
   },

@@ -114,14 +114,14 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
     <DashboardLayout>
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Question */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-700">
           <div className="flex gap-6">
             {/* Vote Column */}
             <div className="flex flex-col items-center gap-4 min-w-[60px]">
               <button
                 onClick={handleLike}
                 className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors cursor-pointer ${
-                  isLiked ? 'bg-orange-50 text-orange-600' : 'bg-slate-50 text-slate-600 hover:bg-orange-50 hover:text-orange-600'
+                  isLiked ? 'bg-orange-50 text-orange-500' : 'bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-orange-50 hover:text-orange-500'
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">thumb_up</span>
@@ -130,14 +130,14 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
               <button
                 onClick={handleFavorite}
                 className={`p-2 rounded-lg transition-colors cursor-pointer ${
-                  isFavorited ? 'bg-orange-50 text-orange-600' : 'bg-slate-50 text-slate-600 hover:bg-orange-50 hover:text-orange-600'
+                  isFavorited ? 'bg-orange-50 text-orange-500' : 'bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-orange-50 hover:text-orange-500'
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">
                   {isFavorited ? 'bookmark' : 'bookmark_border'}
                 </span>
               </button>
-              <div className="text-center text-slate-500">
+              <div className="text-center text-slate-500 dark:text-slate-400">
                 <div className="text-sm font-bold">{question.views}</div>
                 <div className="text-xs">lượt xem</div>
               </div>
@@ -145,7 +145,7 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
 
             {/* Content Column */}
             <div className="flex-1">
-              <h1 className="text-3xl font-black text-slate-900 mb-4">{question.title}</h1>
+              <h1 className="text-3xl font-black text-slate-900 dark:text-slate-100 mb-4">{question.title}</h1>
               
               <div className="flex items-center gap-3 mb-6">
                 <img
@@ -154,20 +154,20 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>
-                  <div className="text-sm font-bold text-slate-900">{question.author.name}</div>
-                  <div className="text-xs text-slate-500">{question.author.role} • {question.createdAt}</div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{question.author.name}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">{question.author.role} • {question.createdAt}</div>
                 </div>
               </div>
 
               <div className="prose prose-slate max-w-none mb-6">
-                <p className="text-slate-700 whitespace-pre-line">{question.content}</p>
+                <p className="text-slate-700 dark:text-slate-300 whitespace-pre-line">{question.content}</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {question.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold hover:bg-orange-50 hover:text-orange-600 transition-colors cursor-pointer"
+                    className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-bold hover:bg-orange-50 hover:text-orange-500 transition-colors cursor-pointer"
                   >
                     {tag}
                   </span>
@@ -179,7 +179,7 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
 
         {/* Answers */}
         <div className="space-y-6">
-          <h2 className="text-2xl font-black text-slate-900">{answers.length} câu trả lời</h2>
+          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">{answers.length} câu trả lời</h2>
 
           {answers.map((answer) => (
             <AnswerCard key={answer.id} {...answer} />
@@ -187,13 +187,13 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
         </div>
 
         {/* Answer Form */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <h3 className="text-xl font-bold text-slate-900 mb-4">Câu trả lời của bạn</h3>
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Câu trả lời của bạn</h3>
           <form onSubmit={handleSubmitAnswer}>
             <textarea
               value={newAnswer}
               onChange={(e) => setNewAnswer(e.target.value)}
-              className="w-full p-4 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+              className="w-full p-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none placeholder:text-slate-400 dark:placeholder:text-slate-500"
               rows={6}
               placeholder="Viết câu trả lời của bạn..."
             />
@@ -201,13 +201,13 @@ Mình từng gặp vấn đề tương tự và sau khi tạo composite index th
               <button
                 type="button"
                 onClick={() => setNewAnswer('')}
-                className="px-6 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-orange-300 transition-colors cursor-pointer"
+                className="px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-bold hover:border-orange-300 transition-colors cursor-pointer"
               >
                 Hủy
               </button>
               <button
                 type="submit"
-                className="px-6 py-2 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors cursor-pointer"
+                className="px-6 py-2 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors cursor-pointer"
               >
                 Gửi câu trả lời
               </button>

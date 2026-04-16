@@ -1,10 +1,11 @@
 import { useSidebarContext } from './DashboardLayout';
+import ThemeToggle from './ThemeToggle';
 
 export default function TopNav() {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useSidebarContext();
 
   return (
-    <header className="sticky top-0 h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100 lg:ml-64 lg:w-[calc(100%-16rem)] w-full z-30">
+    <header className="sticky top-0 h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 lg:ml-64 lg:w-[calc(100%-16rem)] w-full z-30 transition-colors">
       {/* Mobile Menu Button - only visible on mobile */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -12,13 +13,13 @@ export default function TopNav() {
         aria-label="Toggle menu"
       >
         <div className="w-5 h-5 flex flex-col justify-center items-center gap-1">
-          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+          <span className={`w-full h-0.5 bg-orange-500 rounded-full transition-all duration-300 ${
             isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
           }`}></span>
-          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+          <span className={`w-full h-0.5 bg-orange-500 rounded-full transition-all duration-300 ${
             isMobileMenuOpen ? 'opacity-0' : ''
           }`}></span>
-          <span className={`w-full h-0.5 bg-orange-600 rounded-full transition-all duration-300 ${
+          <span className={`w-full h-0.5 bg-orange-500 rounded-full transition-all duration-300 ${
             isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
           }`}></span>
         </div>
@@ -28,14 +29,15 @@ export default function TopNav() {
       <div className="flex-1"></div>
 
       <div className="flex items-center gap-3 lg:gap-6">
+        <ThemeToggle />
         <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-orange-600">notifications</span>
+          <span className="material-symbols-outlined text-orange-500 dark:text-orange-400">notifications</span>
           <div className="hidden sm:flex flex-col text-right">
-            <span className="text-orange-600 font-black text-sm">2,450 XP</span>
-            <span className="text-slate-500 text-[10px] font-bold">Cấp 12</span>
+            <span className="text-orange-500 dark:text-orange-400 font-black text-sm">2,450 XP</span>
+            <span className="text-slate-500 dark:text-slate-400 text-[10px] font-bold">Cấp 12</span>
           </div>
         </div>
-        <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-600/20 cursor-pointer">
+        <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ring-2 ring-orange-500/20 dark:ring-orange-400/20 cursor-pointer">
           <img
             alt="Avatar sinh viên"
             className="w-full h-full object-cover"

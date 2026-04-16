@@ -67,7 +67,7 @@ const assignments = [
 ];
 
 const statusConfig: Record<string, { label: string; color: string; icon: string }> = {
-  pending: { label: 'Chưa làm', color: 'bg-slate-100 text-slate-600', icon: 'schedule' },
+  pending: { label: 'Chưa làm', color: 'bg-slate-100 text-slate-600 dark:text-slate-400', icon: 'schedule' },
   'in-progress': { label: 'Đang làm', color: 'bg-blue-100 text-blue-600', icon: 'pending' },
   overdue: { label: 'Quá hạn', color: 'bg-red-100 text-red-600', icon: 'error' },
   completed: { label: 'Hoàn thành', color: 'bg-green-100 text-green-600', icon: 'check_circle' },
@@ -75,8 +75,8 @@ const statusConfig: Record<string, { label: string; color: string; icon: string 
 
 const priorityConfig: Record<string, { label: string; color: string }> = {
   high: { label: 'Cao', color: 'text-red-600' },
-  medium: { label: 'Trung bình', color: 'text-orange-600' },
-  low: { label: 'Thấp', color: 'text-slate-600' },
+  medium: { label: 'Trung bình', color: 'text-orange-500' },
+  low: { label: 'Thấp', color: 'text-slate-600 dark:text-slate-400' },
 };
 
 export default function AssignmentsPage() {
@@ -100,17 +100,17 @@ export default function AssignmentsPage() {
       <div className="space-y-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Bài tập của tôi</h2>
-            <p className="text-slate-500 mt-1 text-sm sm:text-base">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100">Bài tập của tôi</h2>
+            <p className="text-slate-500 dark:text-slate-400 mt-1 text-sm sm:text-base">
               Quản lý và theo dõi tiến độ các bài tập được giao
             </p>
           </div>
           <div className="flex gap-3 w-full sm:w-auto">
-            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-orange-300 transition-all cursor-pointer text-sm">
+            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 text-slate-700 dark:text-slate-300 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-orange-300 transition-all cursor-pointer text-sm">
               <span className="material-symbols-outlined text-lg">filter_list</span>
               <span className="hidden sm:inline">Lọc</span>
             </button>
-            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-orange-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-700 transition-all shadow-lg cursor-pointer text-sm">
+            <button className="flex-1 sm:flex-none px-4 sm:px-6 py-3 bg-orange-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-700 transition-all shadow-lg cursor-pointer text-sm">
               <span className="material-symbols-outlined text-lg">upload</span>
               <span className="hidden sm:inline">Nộp bài</span>
             </button>
@@ -122,8 +122,8 @@ export default function AssignmentsPage() {
             onClick={() => setFilter('all')}
             className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all cursor-pointer ${
               filter === 'all'
-                ? 'bg-orange-600 text-white shadow-lg'
-                : 'bg-white border border-slate-200 hover:border-orange-300'
+                ? 'bg-orange-500 text-white shadow-lg'
+                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:border-orange-300'
             }`}
           >
             <div className="text-2xl sm:text-3xl font-black">{stats.total}</div>
@@ -134,7 +134,7 @@ export default function AssignmentsPage() {
             className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all cursor-pointer ${
               filter === 'pending'
                 ? 'bg-slate-600 text-white shadow-lg'
-                : 'bg-white border border-slate-200 hover:border-slate-300'
+                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:border-slate-300'
             }`}
           >
             <div className="text-2xl sm:text-3xl font-black">{stats.pending}</div>
@@ -145,7 +145,7 @@ export default function AssignmentsPage() {
             className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all cursor-pointer ${
               filter === 'in-progress'
                 ? 'bg-blue-600 text-white shadow-lg'
-                : 'bg-white border border-slate-200 hover:border-blue-300'
+                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:border-blue-300'
             }`}
           >
             <div className="text-2xl sm:text-3xl font-black">{stats.inProgress}</div>
@@ -156,7 +156,7 @@ export default function AssignmentsPage() {
             className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all cursor-pointer ${
               filter === 'overdue'
                 ? 'bg-red-600 text-white shadow-lg'
-                : 'bg-white border border-slate-200 hover:border-red-300'
+                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:border-red-300'
             }`}
           >
             <div className="text-2xl sm:text-3xl font-black">{stats.overdue}</div>
@@ -167,7 +167,7 @@ export default function AssignmentsPage() {
             className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all cursor-pointer ${
               filter === 'completed'
                 ? 'bg-green-600 text-white shadow-lg'
-                : 'bg-white border border-slate-200 hover:border-green-300'
+                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:border-green-300'
             }`}
           >
             <div className="text-2xl sm:text-3xl font-black">{stats.completed}</div>
@@ -183,7 +183,7 @@ export default function AssignmentsPage() {
             return (
               <div
                 key={assignment.id}
-                className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-orange-300 hover:shadow-md transition-all group"
+                className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-orange-300 hover:shadow-md transition-all group"
               >
                 <div className="flex flex-col lg:flex-row items-start justify-between gap-4 mb-4">
                   <div className="flex-1 w-full">
@@ -197,27 +197,27 @@ export default function AssignmentsPage() {
                       <span className={`text-xs font-bold ${priority.color}`}>
                         Ưu tiên: {priority.label}
                       </span>
-                      <span className="text-xs text-on-surface-variant hidden sm:inline">• {assignment.course}</span>
+                      <span className="text-xs text-slate-600 dark:text-slate-400 hidden sm:inline">• {assignment.course}</span>
                     </div>
-                    <span className="text-xs text-slate-500 block sm:hidden mb-2">{assignment.course}</span>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 block sm:hidden mb-2">{assignment.course}</span>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                       {assignment.title}
                     </h3>
-                    <p className="text-sm text-slate-600 mb-3">{assignment.description}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{assignment.description}</p>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-base text-slate-500">
+                        <span className="material-symbols-outlined text-base text-slate-500 dark:text-slate-400">
                           event
                         </span>
-                        <span className="font-semibold text-slate-700 text-xs sm:text-sm">
+                        <span className="font-semibold text-slate-700 dark:text-slate-300 text-xs sm:text-sm">
                           Hạn nộp: {assignment.dueDate} lúc {assignment.dueTime}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-base text-orange-600">
+                        <span className="material-symbols-outlined text-base text-orange-500">
                           stars
                         </span>
-                        <span className="font-semibold text-slate-700 text-xs sm:text-sm">{assignment.points} điểm</span>
+                        <span className="font-semibold text-slate-700 dark:text-slate-300 text-xs sm:text-sm">{assignment.points} điểm</span>
                       </div>
                       {assignment.submitted && assignment.score !== undefined && (
                         <div className="flex items-center gap-2">
@@ -233,10 +233,10 @@ export default function AssignmentsPage() {
                     {assignment.progress !== undefined && (
                       <div className="mt-4">
                         <div className="flex justify-between text-xs mb-1">
-                          <span className="text-slate-500 font-semibold">Tiến độ</span>
-                          <span className="font-bold text-slate-900">{assignment.progress}%</span>
+                          <span className="text-slate-500 dark:text-slate-400 font-semibold">Tiến độ</span>
+                          <span className="font-bold text-slate-900 dark:text-slate-100">{assignment.progress}%</span>
                         </div>
-                        <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                           <div
                             className="h-full bg-blue-600 transition-all"
                             style={{ width: `${assignment.progress}%` }}
@@ -248,11 +248,11 @@ export default function AssignmentsPage() {
                   <div className="flex lg:flex-col gap-2 w-full lg:w-auto lg:ml-6">
                     {!assignment.submitted ? (
                       <>
-                        <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-orange-600 text-white rounded-xl font-bold text-sm hover:bg-orange-700 transition-colors cursor-pointer whitespace-nowrap">
+                        <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-orange-500 text-white rounded-xl font-bold text-sm hover:bg-orange-700 transition-colors cursor-pointer whitespace-nowrap">
                           Làm bài
                         </button>
                         {assignment.status === 'in-progress' && (
-                          <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:border-orange-300 transition-colors cursor-pointer whitespace-nowrap">
+                          <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-sm hover:border-orange-300 transition-colors cursor-pointer whitespace-nowrap">
                             Tiếp tục
                           </button>
                         )}
@@ -262,7 +262,7 @@ export default function AssignmentsPage() {
                         Đã nộp
                       </button>
                     )}
-                    <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:border-orange-300 transition-colors cursor-pointer whitespace-nowrap"
+                    <button className="flex-1 lg:flex-none px-4 sm:px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-sm hover:border-orange-300 transition-colors cursor-pointer whitespace-nowrap"
                       onClick={() => window.location.href = `/assignments/${assignment.id}`}>
                       Chi tiết
                     </button>

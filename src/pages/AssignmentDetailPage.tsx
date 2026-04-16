@@ -92,7 +92,7 @@ export default function AssignmentDetailPage() {
           </button>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-orange-100 text-orange-600">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-orange-100 text-orange-500">
                 {assignment.course}
               </span>
               <span className="text-sm text-on-surface-variant">• {assignment.instructor}</span>
@@ -104,7 +104,7 @@ export default function AssignmentDetailPage() {
               <span className="material-symbols-outlined">bookmark</span>
               Lưu
             </button>
-            <button className="px-6 py-3 bg-primary text-on-primary rounded-3xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-orange-600/20 cursor-pointer">
+            <button className="px-6 py-3 bg-primary text-on-primary rounded-3xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-all shadow-lg shadow-orange-500/20 cursor-pointer">
               <span className="material-symbols-outlined">upload</span>
               Nộp bài
             </button>
@@ -197,7 +197,7 @@ export default function AssignmentDetailPage() {
             <div className="bg-surface-container-lowest p-6 rounded-3xl shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold text-on-surface-variant">Điểm số</span>
-                <span className="text-2xl font-black text-orange-600">{assignment.points}</span>
+                <span className="text-2xl font-black text-orange-500">{assignment.points}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold text-on-surface-variant">Độ ưu tiên</span>

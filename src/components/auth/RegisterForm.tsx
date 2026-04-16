@@ -19,8 +19,8 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
   return (
     <>
       <div className="mb-10 text-center lg:text-left">
-        <h3 className="text-2xl font-bold text-on-surface mb-2">Tạo tài khoản</h3>
-        <p className="text-on-surface-variant">Bắt đầu hành trình học tập của bạn tại FPT University.</p>
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 transition-colors">Tạo tài khoản</h3>
+        <p className="text-slate-600 dark:text-slate-400 transition-colors">Bắt đầu hành trình học tập của bạn tại FPT University.</p>
       </div>
 
       <RoleToggle
@@ -66,7 +66,7 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
         />
 
         <button
-          className="w-full bg-orange-600 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+          className="w-full bg-orange-500 dark:bg-orange-500 text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-orange-500/20 dark:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
           type="submit"
         >
           Đăng ký
@@ -75,20 +75,20 @@ export default function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
 
       <div className="relative my-10">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-outline-variant/30"></div>
+          <div className="w-full border-t border-slate-200 dark:border-slate-700 transition-colors"></div>
         </div>
-        <div className="relative flex justify-center text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-          <span className="bg-surface px-4">Hoặc đăng ký với</span>
+        <div className="relative flex justify-center text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 transition-colors">
+          <span className="bg-white dark:bg-slate-800 px-4 transition-colors">Hoặc đăng ký với</span>
         </div>
       </div>
 
       <SocialButtons />
 
-      <p className="text-center text-on-surface-variant text-sm font-medium mt-10">
+      <p className="text-center text-slate-600 dark:text-slate-400 text-sm font-medium mt-10 transition-colors">
         Đã có tài khoản?{' '}
         <button
           onClick={onSwitchToLogin}
-          className="text-orange-600 font-bold hover:underline cursor-pointer"
+          className="text-orange-500 dark:text-orange-400 font-bold hover:underline cursor-pointer transition-colors"
         >
           Đăng nhập ngay
         </button>

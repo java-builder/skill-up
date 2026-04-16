@@ -32,31 +32,31 @@ export default function StudentTable() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="text-2xl font-black">Quản lý sinh viên</h3>
+        <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 transition-colors">Quản lý sinh viên</h3>
         <div className="flex gap-2">
-          <select className="bg-surface-container-low border-none rounded-full text-xs font-bold px-4 py-2 focus:ring-0 cursor-pointer">
+          <select className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-bold px-4 py-2 focus:ring-0 cursor-pointer text-slate-900 dark:text-slate-100 transition-colors">
             <option>Sắp xếp: Gần đây</option>
             <option>Sắp xếp: XP</option>
           </select>
-          <button className="p-2 bg-surface-container-low rounded-full hover:bg-surface-container-high transition-colors cursor-pointer">
-            <span className="material-symbols-outlined text-sm">filter_list</span>
+          <button className="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer">
+            <span className="material-symbols-outlined text-sm text-slate-600 dark:text-slate-400">filter_list</span>
           </button>
         </div>
       </div>
 
-      <div className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+      <div className="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700 transition-colors">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-surface-container-low/50 text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">
+            <tr className="bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-[10px] uppercase tracking-widest font-bold transition-colors">
               <th className="px-6 py-4">Sinh viên</th>
               <th className="px-6 py-4">Cấp độ</th>
               <th className="px-6 py-4">Tiến độ</th>
               <th className="px-6 py-4">Hành động</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
             {students.map((student) => (
-              <tr key={student.id} className="group hover:bg-slate-50 transition-colors">
+              <tr key={student.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
                     <div className={`h-10 w-10 rounded-xl ${student.bgColor} overflow-hidden`}>
@@ -67,35 +67,35 @@ export default function StudentTable() {
                       />
                     </div>
                     <div>
-                      <p className="font-bold text-sm">{student.name}</p>
-                      <p className="text-xs text-on-surface-variant">{student.major}</p>
+                      <p className="font-bold text-sm text-slate-900 dark:text-slate-100 transition-colors">{student.name}</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 transition-colors">{student.major}</p>
                     </div>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-black rounded-full">
+                  <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-[10px] font-black rounded-full transition-colors">
                     CẤP {student.level}
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  <div className="w-full max-w-[100px] bg-surface-container-high h-2 rounded-full overflow-hidden">
+                  <div className="w-full max-w-[100px] bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden transition-colors">
                     <div
-                      className="bg-gradient-to-r from-primary to-primary-container h-full"
+                      className="bg-gradient-to-r from-orange-400 to-orange-500 dark:from-orange-500 dark:to-orange-500 h-full transition-colors"
                       style={{ width: `${student.progress}%` }}
                     ></div>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <button className="p-2 hover:bg-slate-200 rounded-full transition-colors cursor-pointer">
-                    <span className="material-symbols-outlined text-slate-400">more_vert</span>
+                  <button className="p-2 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-full transition-colors cursor-pointer">
+                    <span className="material-symbols-outlined text-slate-400 dark:text-slate-500">more_vert</span>
                   </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        <div className="p-4 bg-surface-container-low/30 text-center">
-          <button className="text-sm font-bold text-orange-600 hover:underline cursor-pointer">
+        <div className="p-4 bg-slate-50 dark:bg-slate-700/30 text-center transition-colors">
+          <button className="text-sm font-bold text-orange-500 dark:text-orange-400 hover:underline cursor-pointer transition-colors">
             Xem tất cả 1,842 sinh viên
           </button>
         </div>
